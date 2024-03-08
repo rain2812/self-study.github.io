@@ -1,0 +1,490 @@
+* { /* 將邊框預設值歸零 */
+    padding: 0;
+    margin: 0;
+}
+
+header{ /* 導覽列設置 */
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 150px;
+    width:100%;
+    position: sticky;
+    top: 0; /* 注意需設定 top, left, right 或 bottom，這樣才能在捲動後固定在指定的位置 */
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    background-image: url("Images/logo.png"); /* LOGO圖 */
+    background-size: contain; /* 背景圖片完全顯示在容器內，不會被裁切 */
+    background-repeat: no-repeat; /* 背景圖片不重複顯示 */
+    background-position: center; /* 將背景圖片在水平方向上左對齊，並垂直居中 */
+    position: absolute;
+    top: 0; /* LOGO位置調整 */
+    line-height: 150px; /* LOGO行高調整 */
+    width: 33vw; /* LOGO寬度 */
+    text-indent: -9999px; /* 將標題文字移走，只留LOGO */
+}
+
+h2  {
+    font-size: 24px; /* 原值24px */
+}
+
+h3 { 
+    margin: 15px 0px 5px;
+    font-size: 20px; /* 原值18.7px */
+}
+
+.mark {
+    background-color: rgb(190, 190, 190);
+    border: 1px black solid;
+    padding: 1px 4px;
+}
+
+article {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+img {
+    max-width: 100%; /* 圖片的最大寬度設為其容器的100% */
+    height: auto; /* 高度自動按比例縮放 */
+    margin-bottom: 10px; /* 添加底部間距 */
+    padding: 5px; /* 添加內邊距 */
+}
+
+.wordred {
+    color: red;
+}
+
+.wordgreen {
+    color: green;
+}
+
+.top-level-menu { /* 第一層導覽選單的 CSS 選擇器 */
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    color: white;
+    line-height: 150px; /* 設置行高 */
+}
+  
+.top-level-menu li { /* 首頁導覽列外觀及排版設置 */
+    display: inline;
+    margin-right: 4vw; /* 設置文字間隔 */
+    position: relative; /* 設置導覽列第一層下拉式選單的框框位置 */
+    line-height: 20px; /* 設置導覽列第一層下拉式選單的框框行高 */
+}
+
+.top-level-menu a { /* 首頁導覽列第二層選單調整 */
+    text-decoration: none; /* 移除連結的下劃線樣式，使其在瀏覽器中不顯示下劃線 */
+    display: inline-block;
+}
+
+.top-level-menu a:hover{ /* 移到首頁導覽列選單時出現底線 */
+    text-decoration: underline;
+    color: brown;
+}
+
+.top-level-menu li:hover > .sub-menu { /*這是一個樣式規則，當滑鼠懸停在 <li> 元素上時，將顯示相鄰的 .sub-menu 元素。 */
+    display: block;
+}
+  
+nav .sub-menu { /* 第二層選單項目的 CSS 選擇器 */
+    display: none;
+    position: absolute;
+    width: 250px; /* 設置寬度讓文字保持在同一行 */
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ccc;
+}
+  
+nav .sub-menu li a {
+    padding: 10px;
+    color: white;
+}
+
+.content{
+    background-color: antiquewhite;
+    height: 80vh; /* 確保 .indexmain 元素占滿整個視窗95%高度 */
+    background-image: url(Images/Home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content h2 {
+    font-size: 60px;
+    color:rgb(33, 30, 210);
+}
+
+.content h3 {
+    font-size: 30px;
+    color: rgb(51, 96, 192);
+}
+
+.newsletter{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.newsletter p {
+    margin-bottom: 10px;
+}
+
+.newsletter input, .newsletter button {
+    color: white;
+    background-color: transparent;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.newsletter input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    width: 80px;
+    cursor: pointer;
+}
+
+input::placeholder { 
+    color: #ffffff; /* E-Mail輸入框的文字色彩 */
+}
+
+input:focus {
+    outline: none; /* 移除輸入框邊線的預設顏色 */
+    border-color: rgb(255, 255, 255); /* 指定輸入框邊線的顏色 */
+}
+
+.bar-menu a { /* 分頁導覽列連結設置 */
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    color: white;
+    line-height: 150px; /* 設置行高 */
+    font-size: 16px;
+    max-width: 100%; /* 設置最大寬度為100% */
+    height: auto;
+}
+
+.backgroundone {
+    background-color: antiquewhite;
+    background-size: contain;
+    background-position: center;
+    border: 5px white solid;
+    padding: 2px 50px;
+    margin-bottom: 2px;
+    color: rgb(0, 48, 204);
+}
+
+.backgroundone li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.backgroundone h2 {
+    margin-bottom: 10px;
+}
+
+.backgroundtwo {
+    background-image: url(Images/D\ com.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 5px white solid;
+    padding: 2px 20px;
+    margin: 2px 5px;
+    color: rgb(63, 86, 150);
+    padding-left: 50px; /* 內文縮排 */
+}
+
+.backgroundtwo li {
+    font-size: 20px;
+}
+
+.hrone {
+    height: 1px;
+    background-color: gray;
+    border-color: gray;
+    margin: 5px 0 2px;
+}
+
+.Contractiontwo {
+    padding-left: 25px;
+}
+
+.menu {
+    display: none;
+}
+
+.program {
+    margin: 0 1000px 0 10px;
+}
+
+.program h3 {
+    padding: 0;
+    margin: 0;
+}
+
+
+footer { /*FOOTER*/
+    background-color: black;
+    color: rgb(160, 160, 160);
+    padding-left: 20px;
+}
+
+/* 響應式設計語法(my screen is 2505px) */
+/* Huge size (Larger screen) */
+@media screen and (max-width: 2504px) {
+    .content h2 {
+        font-size: 45px;
+    }
+    
+    .content h3 {
+        font-size: 22.5px;
+    }
+
+    .program {
+        margin: 0 900px 0 10px;
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    header {
+        height: 150px;
+    }
+
+    .content h2 {
+        font-size: 27.6px;
+    }
+    
+    .content h3 {
+        font-size: 13.8px;
+    }
+
+    .program {
+        margin: 0 200px 0 10px;
+    }
+}
+
+/* 平板裝置 */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    header {
+        height: 120px;
+    }
+
+    header h1 {
+        left: 50%; /* 將背景圖置中step 1 */
+        transform: translateX(-50%); /* 將背景圖置中step 2 */
+        height: 120px;
+        width: 40vw;
+    }
+
+    .menu {
+        display: block;
+        background-color: transparent;
+        color: white;
+        font-size: 60px;
+        position: absolute;
+        top: 15px;
+        left: 30px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .content h2 {
+        font-size: 21.5px;
+    }
+    
+    .content h3 {
+        font-size: 11px;
+    }
+
+    .newsletter p {
+        font-size: 13px;
+    }
+
+    .top-level-menu {
+        display: none; /* 隱藏第一層選單 */
+        /* 第一層選單樣式調整 */
+        background-color: rgba(0, 0, 0, 0.8); 
+        top: 100%;
+        left: 0;
+        padding: 5px 0 5px 30px;
+        width: 150px;
+    }
+
+    .top-level-menu li { /* 第一層選單樣式調整 */
+        padding: 15px 0;
+        font-size: 12px;
+    }
+
+    .top-level-menu.show {
+        display: block; /* 點擊.menu按鈕後顯示第一層選單 */
+    }
+
+    .top-level-menu > li {
+        display: block; /* 垂直排列 */
+    }
+
+    .top-level-menu .sub-menu {
+        display: none;
+        width: 200px;
+        top: 0; /* 讓子選單頂部與父選單對齊 */
+        left: 100%; /* 將子選單顯示在第一層選單的右邊 */
+    }
+
+    .top-level-menu .sub-menu li a {
+        display: inline-block;
+        width: 150px; /* 或者根据需要设置固定宽度 */
+        white-space: nowrap; /* 防止导航列名称换行 */
+    }
+
+    .bar-menu a { /* 分頁導覽列連結設置 */
+        line-height: 120px; /* 設置行高 */
+        font-size: 18px;
+    }
+
+    .program {
+        margin: 0 30px 0 10px;
+    }
+}
+
+/* 手機裝置 */
+@media screen and (max-width: 480px) {
+    header {
+        height: 50px;
+    }
+
+    header h1 {
+        left: 50%; /* 將背景圖置中step 1 */
+        transform: translateX(-50%); /* 將背景圖置中step 2 */
+        height: 50px;
+        width: 50vw;
+    }
+
+    h2 {
+        margin: 2px 0 5px;
+    }
+
+    h3 {
+        margin: 5px 0px 2px;
+    }
+
+    .menu {
+        display: block;
+        background-color: transparent;
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .content h2 {
+        font-size: 12px;
+    }
+    
+    .content h3 {
+        font-size: 8px;
+    }
+
+    .newsletter p, footer {
+        font-size: 7px;
+    }
+
+    .top-level-menu {
+        display: none; /* 隱藏第一層選單 */
+        /* 第一層選單樣式調整 */
+        background-color: rgba(0, 0, 0, 0.8); 
+        top: 100%;
+        left: 0;
+        padding: 2px 0 2px 10px;
+        width: 100px;
+    }
+
+    .top-level-menu li { /* 第一層選單樣式調整 */
+        padding: 1px 0;
+        font-size: 7px;
+    }
+
+    .top-level-menu li a { 
+        display: inline-block;
+        width: auto; /* 或者根据需要设置固定宽度 */
+        white-space: nowrap; /* 防止导航列名称换行 */
+    }
+
+    .top-level-menu.show {
+        display: block;
+    }
+
+    .top-level-menu > li {
+        display: block; /* 垂直排列 */
+    }
+
+    .top-level-menu .sub-menu {
+        display: none;
+        width: 150px;
+        top: 0; /* 讓子選單頂部與父選單對齊 */
+        left: 100%; /* 將子選單顯示在第一層選單的右邊 */
+    }
+
+    .top-level-menu .sub-menu li a {
+        display: inline-block;
+        width: 100px; /* 或者根据需要设置固定宽度 */
+        white-space: nowrap; /* 防止导航列名称换行 */
+    }
+
+    .bar-menu a { /* 分頁導覽列連結設置 */
+        line-height: 50px; /* 設置行高 */
+        font-size: 11px;
+    }
+    
+    h2  {
+        font-size: 12px; /* 原值24px */
+    }
+    
+    h3 { 
+        font-size: 11px; /* 原值18.7px */
+    }
+
+    .backgroundone li, .backgroundone p {
+        font-size: 12px;
+    }
+
+    .backgroundtwo {
+        border: 1px white solid;
+        padding: 2px 5px;
+        margin: 1px 2px;
+        padding-left: 20px; /* 內文縮排 */
+    }
+
+    .backgroundtwo li, .backgroundtwo p {
+        font-size: 12px;
+    }
+
+    .program {
+        font-size: 9px;
+        margin: 0 30px 0 10px;
+    }
+
+    img {
+        height: auto; /* 高度自動按比例縮放 */
+        margin-bottom: 2px; /* 添加底部間距 */
+        padding: 2px; /* 添加內邊距 */
+    }
+}
