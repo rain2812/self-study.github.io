@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Note</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./highlight/styles/github-dark.css">
+    <script src="./highlight/highlight.js"></script> 
+    <script>hljs.highlightAll();</script> 
+</head>
+<body>
+    <header>
+        <h1>HTML Note</h1>
+        <nav class="bar-menu">
+            <p><a href="index.html">Home</a></p>
+        </nav>
+    </header>
+    <main>
+        <section class="backgroundtwo">
+            <h2>Highlight plugin</h2>
+            <article>1.You can download the latest version of Highlight.js from the official website (https://highlightjs.org/).<br>
+                    Choose the programming language support you need, or you can also download the full version.<br>
+                    2.Unzip the downloaded file and include it in your project.<br>
+                    You can place the files in a suitable location within your project directory, such as a folder named 'highlight'.<br>
+                    3.Add the Highlight.js stylesheet to your webpage.<br>
+                    Include the following code in the &lt;head&gt; tag to link the Highlight.js stylesheet file:<br>
+                    (I have selected the github-dark.css for my styles.)
+            </article>
+            <div class="program">
+                <pre><code class="language-html">
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./highlight/styles/github-dark.css&quot;&gt;
+                </code></pre>
+            </div>
+
+            <article>4.Include the following code at the bottom of the &lt;body&gt; tag (recommended) or within the &lt;head&gt; tag to import the Highlight.js script:</article>
+            <div class="program">
+                <pre><code class="language-html">
+    &lt;script src=&quot;./highlight/highlight.js&quot;&gt;&lt;/script&gt; 
+    &lt;script&gt;hljs.highlightAll();&lt;/script&gt; 
+                </code></pre>
+            </div>
+
+            <article>5.After your webpage has finished loading, you typically initialize Highlight.js within a &lt;script&gt; tag.<br>
+                You can add the following code at the bottom of the &lt;body&gt; tag:</article>
+            <div class="program">
+                <pre><code class="language-html">
+    &lt;script&gt;
+        document.querySelectorAll(&#39;pre code&#39;).forEach((block) =&gt; {
+            if (block.dataset.highlighted) {
+                delete block.dataset.highlighted;
+            }
+            hljs.highlightElement(block);
+            block.dataset.highlighted = &#39;yes&#39;;
+        });
+    &lt;/script&gt;
+                </code></pre>
+            </div>
+
+            <article>6.Now, you can use the &lt;pre&gt;&lt;code&gt; tags to include code in your webpage.<br>
+                Highlight.js will automatically syntax highlight these code blocks.</article>
+            <div class="program">
+                <pre><code class="language-html">
+    &lt;div class=&quot;program&quot;&gt;
+        &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;
+
+        &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+                </code></pre>
+            </div>
+        </section>
+
+
+        <script>
+            document.querySelectorAll('pre code').forEach((block) => {
+                if (block.dataset.highlighted) {
+                    delete block.dataset.highlighted;
+                }
+                hljs.highlightElement(block);
+                block.dataset.highlighted = 'yes';
+            });
+        </script>
+    </main>
+</body>
+</html>

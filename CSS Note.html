@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Note (Cascading Style Sheets)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1>CSS Note</h1>
+    <nav>
+        <ul class="bar-menu">
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <section class="backgroundtwo">
+            <h2>Basics</h2>
+                <ol>
+                    <li>CSS tells the browser how to display your webpage.<br>
+                        You can use CSS to set the color, font, size, and other aspects of HTML elements.</li>
+                    <li>You have three methods for applying CSS.<br>
+                        1.You can directly add style within the HTML code.<br>
+                        2.You can add style within the head section of the HTML.<br>
+                        3.You're best to put all the styles in a separate file and link to it.<br>
+                        Created a separate style.css file and switched the editor view to that file.</li>
+                    <li>You can add style to an element by specifying it in the style element and setting a property.<br>
+                        For example, you can center your h1 element by setting its text-align property to the value center.</li>
+                    <li>You can add the same group of styles to many elements by creating a list of selectors.<br>
+                        Each selector is separated with commas.</li>
+                    <li>You need to link the styles.css file in the HTML, so the styles will be applied.<br>
+                        Nest a self-closing link element in the head element.<br>
+                        Give it a rel attribute value stylesheet and an href attribute value of style.css.</li>
+                    <li>The 'rel' attribute specifies the relationship of the linked resource, and in this case, 'rel="stylesheet"' indicates that the linked resource is a style sheet file.<br>
+                        This informs the browser that the file is a style sheet and needs to be applied to the document.<br>
+                        However, the 'rel' attribute is not limited to just 'stylesheet'. It can be used to define different types of relationships. For example:</li>
+                        <ul>
+                            <li>rel="stylesheet"：The linked resource is a style sheet file.</li>
+                            <li>rel="icon"：Specifies the website's icon.</li>
+                            <li>rel="preconnect"：Specifies pre-connecting resources.</li>
+                            <li>rel="alternate"：Specifies alternate versions of resources, such as alternate language versions or documents.</li>
+                        </ul>
+                    <li>You can use the id selector to target a specific element with an id attribute.<br>
+                        An id selector is defined by placing the hash symbol # directly in front of the element's id value.</li>
+                    <li>A class selector is defined by a name with a dot directly in front of it.</li>
+                    <li>Comments in CSS look like this: <span class="wordgreen">/* comment here */</span></li>
+                </ol>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>CSS屬性介紹</h2>
+                <h3>Unit/Value</h3>
+                    <ul>
+                        <li>color/height/width/position：顏色/高度/寬度/位置</li>
+                        <li>top/bottom/left/right：與上下左右邊的距離</li>
+                        <li>px：像素(pixels)</li>
+                        <li>vw/vh：視窗的百分之幾，vw為左右即寬度，vh為上下即高度<br>
+                            For example: Change the width property's value to be 80%, to make it 80% the width of its parent element.</li>
+                        <li>border：邊角</li>
+                        <li>radius：圓角效果</li>
+                    </ul>
+                <h3>線條樣式</h3>
+                    <ul>
+                        <li>solid：直線</li>
+                        <li>dashed：虛線</li>
+                        <li>dotted：圓點</li>
+                        <img src="Images/css 線條樣式.png" alt="線條樣式">
+                    </ul>
+                <h3>CSS盒子模型 (Box Model)</h3>
+                    <ul>
+                        <li>padding：會在元素的內側添加空間，影響元素內容與元素邊框之間的距離。</li>
+                        <li>border：用來定義元素邊框的屬性，它可以用來設置元素的邊框寬度、樣式和顏色。<br>
+                        <li>margin：會在元素的外側添加空間，影響元素與其他元素之間的距離。</li>
+                        <img src="Images/css box model.png" alt="CSS Box Model">
+                    </ul>
+                <h3>Font setting</h3>
+                    <ul>
+                        <li>font-family：字體<br>
+                            sans-serif is a fairly common font that is very readable.<br>
+                            You can add a fallback value for the font-family by adding another font name separated by a <span class="wordred">comma</span>.<br>
+                            Fallbacks are used in instances where the initial is not found/available.</li>
+                        <li>font-style：字體樣式</li>
+                            <ul>
+                                <li>normal：default</li>
+                                <li>italic：斜體字</li>
+                                <li>oblique：與 italic 類似，將文字傾斜顯示，但是沒有為斜體設計的字體時會採用這種方式，效果可能略有差異。</li>
+                            </ul>
+                        <li>font-size：字體大小</li>
+                    </ul>
+                <h3>Background setting</h3>
+                    <ul>
+                        <li>background-color/size/position：背景顏色/大小/位置</li>
+                        <li>background-image:URL(網址)：引用圖片為背景</li>
+                        <li>background-repeat：背景重複與非重複設置</li>
+                    </ul>
+                <h3>圖片size調整</h3>
+                    <img src="Images/Picture size.png" alt="Picture size">
+                <h3>Typography</h3>
+                    <ul>
+                        <li>display：用來定義 HTML 元素的顯示方式。</li>
+                        <ol class="Contractiontwo">
+                            <li>block：block：元素呈現為區塊級元素，它會新起一行並且盡可能撐滿其父元素的寬度，可以設定寬度、高度、外邊距和內邊距。</li>
+                            <li>inline：元素呈現為內聯元素，它不會產生換行，只佔據它實際內容的大小，不可設定寬度和高度，水平方向上的外邊距和內邊距會起作用，垂直方向上的外邊距和 內邊距則不會。</li>
+                            <li>inline-block：元素呈現為內聯塊元素，它不會新起一行，但可以設定寬度、高度、外邊距和內邊距。</li>
+                            <li>flex：元素將以彈性盒模型顯示，可用於建立靈活的佈局。</li>
+                            <li>grid：元素將以網格佈局顯示，用於建立複雜的二維佈局。</li>
+                            <li>none：元素將不會被顯示，完全不佔據頁面的空間。</li>
+                            <li>table：元素將呈現為表格元素，可透過 table-row、table-cell 等屬性來控製表格佈局。</li>
+                            <li>inline-table：元素呈現為內嵌表格元素，類似 table，但不會新起一行。</li>
+                            <li>list-item：元素呈現為清單項，通常與 list-style 屬性一起使用，用於清單樣式的設定。</li>
+                            <li>inherit：繼承父元素的 display 屬性。</li>
+                        </ol>
+                    </ul>
+                <h3>Position佈局</h3>
+                    <ul>
+                        <li>Position:absolute：絕對位置，從版面(父元素)的左上角開始計算</li>
+                        <li>Position:relative：相對位置，從子元素原來的位置開始計算</li>
+                        <img src="Images/Position佈局.png" alt="Position">
+                        <p><span class="wordred">當子元素在使用 absolute 進行定位時，父元素本身也要有 position:relative 這行語法。</span></p>
+                        <li>Position:fixed：可以讓區塊固定在指定位置，意思是不論頁面多長，就算把捲軸拉到最底下，被設置為 fixed 的區塊還是會在頁面上相同位置。</li>
+                        <li>Position:sticky：這個屬性和 fixed 非常像，差別在於 sticky 會佔住原本版面的空間。<br>
+                            fixed 的區塊會被固定在指定位置，並且覆蓋網頁中內容，但是 sticky 會讓原本網頁的內容推到下面，不會讓 sticky 擋住原有的文字。</li>
+                        <p><span class="wordred">注意：需設定 top, left, right 或 bottom，這樣才能在捲動後固定在指定的位置</span></p>
+                        <li>text-indaent：用於設置段落或塊級元素的文本內縮（即段首縮進）。<br>
+                            這個屬性控制文本第一行與其餘行的水平間距，可以將文本的第一行移動到其餘文本之外。</li>
+                    </ul>
+                <h3>Flexbox 排版</h3>
+                    <ul>
+                        <li>display:flex：可以讓子元素產生各種排列方式</li>
+                            <p><span class="wordred">注意：此時裡面的子元素會變成橫向排列</span></p>
+                        <li>flex-direction:colume：指定flex方向為縱向排列</li>
+                        <li>justify-content:center：水平置中</li>
+                        <li>justify-content:space-between：伸展到父元素的兩側</li>
+                        <img src="Images/Flexbox 排版技巧.png" alt="Flexbox 排版技巧">
+                        <li>justify-content:space-evenly：均分子元素以外的空隙</li>
+                        <li>align-items:center：垂直置中</li>
+                        <img src="Images/Flexbox 排版技巧2.png" alt="Flexbox 排版技巧2">
+                        <li>text-align：文字對齊位置，如left靠左、center置中等。</li>
+                    </ul>
+                <h3>偽選擇器 (pseudo-selector)</h3>
+                    <ul>
+                        <li>a:hover：Modifying the properties that change when the mouse hovers over the link.</li>
+                        <li>a:active：Setting the properties that change when a link has been clicked.</li>
+                        <li>a:visited：Setting the properties that change when a link has been visited.</li>
+                    </ul>
+                <h3>cursor語法說明</h3>
+                    <p>cursor 屬性用於指定當鼠標指針位於指定元素上時所顯示的<span class="wordred">游標類型</span>。<br>
+                        這個屬性可以用於改變游標的樣式，以提供與用戶交互時的視覺反饋。<br>
+                        以下是一些常見的 cursor 屬性值及其對應的游標類型：</p>
+                    <ul>
+                        <li>auto：瀏覽器自動選擇適合的游標類型。</li>
+                        <li>pointer：顯示為手指，表示可以點擊的連結或可交互元素。</li>
+                        <li>default：默認的游標類型，通常是箭頭。</li>
+                        <li>move：顯示為四方向的箭頭，表示可移動的元素。</li>
+                        <li>text：顯示為I形的游標，表示可以輸入文本的區域。</li>
+                        <li>wait：顯示為等待的圈圈，表示用戶應該等待操作完成。</li>
+                        <li>crosshair：顯示為十字線，用於表明用戶可以進行選擇或測量操作。</li>
+                        <li>not-allowed：顯示為圓圈加斜線，表示操作不被允許。</li>
+                    </ul>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>How to select color on the website</h2>
+            <article>There are two main color models: the additive RGB (red, green, blue) model used in electronic devices,<br>
+                and the subtractive CMYK (cyan, magenta, yellow, black) model used in print.</article>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>Application</h2>
+            <h3>you want to center the #menu horizontally.</h3>
+            <ol>
+                <li>You can do this by setting its margin-left and margin-right properties to auto.<br>
+                    Think of the margin as invisible space around an element.<br>
+                    Using these two margin properties, center the #menu element within the body element.</li>
+            </ol>
+            <h3>If you want to align the items on the menu to the left and the prices to the right.</h3>
+            <ol>
+                <li>In the class name for items, use the 'text-align' property set to 'left', and in the class name for prices, use the 'text-align' property set to 'right'.</li>
+                <li>That is kind of what you want, but now it would be nice if the flavor and price were on the same line.<br>
+                    p elements are block-level elements, so they take up the entire width of their parent element.<br>
+                    To get them on the same line, you need to apply some styling to the p elements so they behave more like inline elements.</li>
+                <li>Start by adding a class attribute with the value [item] to the first [article] element in the HTML.</li>
+                <li>The p elements are nested in an [article] element with the class attribute of [item].<br>
+                    You can style all the p elements nested anywhere in elements with a class named item.</li>
+                <li>Using the above selector, add a 'display' property with value 'inline-block' so the p elements behave more like inline elements.</li>
+                <li>That's closer, but the price didn't stay over on the right.<br>
+                    This is because inline-block elements only take up the width of their content.<br>
+                    To spread them out, add a width property to the [items] and [price] class selectors that have a value of 50% each.</li>
+                <li>Styling the p elements as inline-block and placing them on separate lines in the code creates an extra space to the right of the first p element, causing the second one to shift to the next line.<br>
+                    One way to fix this is to make each p element's width a little less than 50%.</li>
+                <li>That worked, but there is still a little space on the right of the [price].<br>
+                    You could keep trying various percentages for the widths.<br>
+                    Instead, use the back space key on your keyboard to move the p element with the class [price] next to the p element with the class [items] so that they are on the same line in the editor.<br>
+                    Make sure there is no space between them.</li>
+                <li>Now go ahead and change both the [items] and [price] class' widths to be 50% again.</li>
+                <p>If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.<br>
+                    This is because the width of the p elements on the left side can only take up 50% of the space.</p>
+                <li>Since you know the prices on the right have significantly fewer characters, change the [items] class width value to be 75% and the [price] class width value to be 25%.</li>
+                <li>On a very wide screen, the [coffee] and [dessert] appear far apart from their prices.<br>
+                    You can add a 'max-width' property to the [menu] class with a value of [500px] to prevent it from growing too wide.</li>
+            </ol>
+
+            <h2>範例</h2>
+                <p>範例1，nav是選擇器（selector）：一種用於選擇 HTML 元素的模式或規則。<br>
+                    它們告訴瀏覽器應該將哪些樣式應用到文檔的哪些元素上。<br>
+                    選擇器可以包含元素名稱、類名、ID、屬性等不同類型的標識符。<br><br>
+                    ul是後代選擇器（descendant selector）：用於選擇某個元素的後代元素。<br>
+                    它使用空格（或其他適當的子選擇器）將兩個或多個選擇器連接在一起。<br>
+                    後代選擇器將匹配所有符合第二個選擇器的元素，並且它們是前一個選擇器的後代。
+                </p>
+                <img src="Images/css範本1.png" alt="範例1">
+                <p>範例2，在 CSS 中，星號 * 是一個通用選擇器，表示選擇文檔中的所有元素。<br>
+                    這意味著 * 將匹配 HTML 文件中的每個元素，並且可以應用相同的樣式設置。<br>
+                    在下圖 CSS 代碼中，* 被用來設置所有元素的內邊距和外邊距為零，
+                    這樣做可以清除不同瀏覽器之間可能存在的默認樣式，使得元素之間的間距更加一致。
+                </p>
+                <img src="Images/css範本2.png" alt="範例2">
+                <p>當四個邊需要不同間距時，可依據下方圖示的順序設置不同邊的間距</p>
+                <img src="Images/css 間距設置.png" alt="四個邊的設置順序">
+        </section>
+    </main>
+</body>
+</html>
