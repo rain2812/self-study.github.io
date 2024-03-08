@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同步備份檔案</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../highlight/styles/github-dark.css">
+    <script src="../highlight/highlight.js"></script> 
+    <script>hljs.highlightAll();</script> 
+</head>
+<body>
+    <header>
+        <h1>同步備份檔案</h1>
+        <nav>
+            <ul class="bar-menu">
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="backgroundtwo">
+            <h2>瀏覽來源資料夾內容</h2>
+            <section class="program">
+                <pre><code class="python">
+    import os
+
+    path = r"URL or local path"
+    
+    for dir_path, dir_names, file_names in os.walk(path):
+        print("目前路徑:", dir_path)
+    
+        if len(dir_names) != 0:
+            print("子目錄：", dir_names)
+        else:
+            print("沒有子目錄")
+        
+        if len(file_names) != 0:
+            print("檔案：", file_names)
+        else:
+            print("沒有子目錄")
+    
+        for f in file_names:
+            print("檔案完整路徑：", os.path.join(dir_path, f))
+                </code></pre>
+            </section>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>備份檔案</h2>
+            <section class="program">
+                <pre><code class="python">
+    import argparse
+    import os
+    from os import path
+    import shutil
+    import sys
+    
+    parser = argparse.ArgumentParser() #建立解析命令的物件
+    parser.add_argument("src",help="來源資料夾路徑") #新增參數src，加入要處置的命令參數
+    parser.add_argument("dest",help="目標資料夾路徑")
+    args = parser.parse_args() #解析命令參數
+    
+    if path.isdir(args.src): #如果src參數值是"資料夾路徑"
+        #在路徑後面加上路徑分隔字元(如："\")
+        src = path.join(args.src, "")
+    else:
+        print('"{}"不是資料夾路徑!'.format(args.src))
+        sys.exit(2)
+    
+    if path.isdir(args.dest):
+        dest = path.join(args.dest, "")
+    else:
+        print('"{}"不是資料夾路徑!'.format(args.dest))
+        sys.exit(2)
+    
+    for dir_path, dir_names, file_names in os.walk(src):
+        folder = dir_path.replace(src,"")#取出路徑的資料夾名稱
+        dest_path = dest #目標路徑
+        print("目前路徑:", dir_path)
+    
+        if folder == "":
+            print("目前在根目錄")
+        else:
+            print("資料夾路徑：", folder)
+            dest_path = path.join(dest, folder) #合併成目標路徑
+                    
+            if not path.isdir(dest_path): #如果目標路徑不是資料夾...
+                print("新增資料夾：", dest_path)
+                os.makedirs(dest_path) #新增資料夾
+    
+        for f in file_names:
+            src_path = path.join(dir_path, f)
+            save_path = path.join(dest_path, f) #結合目標路徑和檔名
+    
+            if not path.isfile(save_path): #如果目標檔案不存在
+                shutil.copy2(src_path, save_path) #則直接複製檔案
+    
+            else:
+                src_time = int(path.getmtime(src_path)) #來源檔案修改時間
+                dest_time =  int(path.getmtime(save_path)) #目標檔案修改時間
+    
+                if src_time > dest_time: #若來源檔案修改時間 > 目標檔
+                    shutil.copy2(src_path, save_path) #則複製檔案
+                    
+    #cmd 執行指令：python backup.py 來源路徑 目標路徑                    
+                </code></pre>
+            </section> 
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('pre code').forEach((block) => {
+            if (block.dataset.highlighted) {
+                delete block.dataset.highlighted;
+            }
+            hljs.highlightElement(block);
+            block.dataset.highlighted = 'yes';
+        });
+    </script>
+</body>
+</html>

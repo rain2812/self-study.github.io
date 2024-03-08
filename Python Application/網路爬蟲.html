@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網路爬蟲</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../highlight/styles/github-dark.css">
+    <script src="../highlight/highlight.js"></script> 
+    <script>hljs.highlightAll();</script> 
+</head>
+<body>
+    <header>
+        <h1>網路爬蟲</h1>
+        <nav>
+            <ul class="bar-menu">
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="backgroundtwo">
+            <h2>Selenium：<a href="seleniumhq.org" alt="Selenium網址">seleniumhq.org</a></h2>
+            <h3>Selenium涵蓋三組工具</h3>
+            <ol>
+                <li>WebDiver：Allow an external program to control the browser.</li>
+                <li>Selenium IDE：瀏覽器外掛，可錄下並重複執行操作紀錄。</li>
+                <li>Selenium-Grid：讓WebDiver同時操控多個平台與瀏覽器的工具。</li>
+            </ol>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>WebDiver 瀏覽器自動化API</h2>
+            <h3>Install the driver.</h3>
+            <ol>
+                <li>Download the driver.</li>
+                <ul class="Contractiontwo">
+                    <p class="wordred">Please pay attention to version compatibility issues.</p>
+                    <li>Chrome's driver：chromedriver. <a href="https://chromedriver.chromium.org/downloads" alt="Chromedriver Downloads">Chromedriver Downloads</a></li>
+                    <li>macOS's driver：Safari</li>
+                </ul>
+                <li>Open CMD in your path.</li>
+                <li>Input "pip install selenium" and run it.</li>
+                <li>Click on chrome.exe in your directory path, and a blank Chrome browser will open.</li>
+            </ol>
+
+            <h3>Open a blank Chrome browser.</h3>
+            <article>If you want to open a blank Chrome browser, you can enter Python and execute the following code, or save the code into a file and run it directly.</article>
+            <section class="program">
+                <pre><code class="python">
+    from selenium import webdriver
+
+    cService = webdriver.ChromeService(executable_path='your driver path') #在 Selenium 4.6 或以上的版本中，你不能直接將 executable_path 傳遞給 Chrome()，前面需要加上executable_path。
+    driver = webdriver.Chrome(service=cService) #建立WebDriver物件
+                </code></pre>
+            </section>
+
+            <h3>選定網頁元素</h3>
+            <article>指令 find_element_by_OOO 代表藉由OOO找尋元素，範例如下：</article>
+            <ul>
+                <li>find_element_by_id：元素的id名稱。</li>
+                <li>find_element_by_class_name：元素的class名稱。</li>
+                <li>find_element_by_name：元素的name名稱。</li>
+                <li>find_element_by_tag_name：元素的標籤名稱。</li>
+            </ul>
+            <article>若指令的element有加s則為複數型指令，傳回列表類型的值，反之則為單數型指令，僅傳回一個值。</article>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('pre code').forEach((block) => {
+            if (block.dataset.highlighted) {
+                delete block.dataset.highlighted;
+            }
+            hljs.highlightElement(block);
+            block.dataset.highlighted = 'yes';
+        });
+    </script>
+</body>
+</html>
