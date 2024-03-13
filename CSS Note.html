@@ -58,7 +58,15 @@
                         <li>px：像素(pixels)</li>
                         <li>vw/vh：視窗的百分之幾，vw為左右即寬度，vh為上下即高度<br>
                             For example: Change the width property's value to be 80%, to make it 80% the width of its parent element.</li>
-                        <li>border：邊角</li>
+                        <li>border：邊角
+                        </li>
+                        <article>
+                            All HTML elements have borders, although they are typically set to none by default.
+                            With CSS, you can control all aspects of an element's border and set the border on all sides or just one side at a time. To make a border visible, you need to specify its width and style.
+                            Borders have several styles to choose from. You can make your border a solid line, but you can also use a dashed or dotted line if you prefer. Solid border lines are probably the most common.
+                            Your border should be visible now. If no color is set, black is used by default.
+                            But to enhance the readability of your code, it's better to explicitly set the border color.
+                        </article>
                         <li>radius：圓角效果</li>
                     </ul>
                 <h3>線條樣式</h3>
@@ -66,6 +74,7 @@
                         <li>solid：直線</li>
                         <li>dashed：虛線</li>
                         <li>dotted：圓點</li>
+                        <li>double：雙直線</li>
                         <img src="Images/css 線條樣式.png" alt="線條樣式">
                     </ul>
                 <h3>CSS盒子模型 (Box Model)</h3>
@@ -102,6 +111,8 @@
                         <li>display：用來定義 HTML 元素的顯示方式。</li>
                         <ol class="Contractiontwo">
                             <li>block：block：元素呈現為區塊級元素，它會新起一行並且盡可能撐滿其父元素的寬度，可以設定寬度、高度、外邊距和內邊距。</li>
+                            <article><span class="wordred">When two block elements are placed next to each other, they stack on top of each other like actual blocks.
+                                The new block is now occupying the entire width of the marker, pushing the old block down to the next line.</span></article>
                             <li>inline：元素呈現為內聯元素，它不會產生換行，只佔據它實際內容的大小，不可設定寬度和高度，水平方向上的外邊距和內邊距會起作用，垂直方向上的外邊距和 內邊距則不會。</li>
                             <li>inline-block：元素呈現為內聯塊元素，它不會新起一行，但可以設定寬度、高度、外邊距和內邊距。</li>
                             <li>flex：元素將以彈性盒模型顯示，可用於建立靈活的佈局。</li>
@@ -163,44 +174,150 @@
 
         <section class="backgroundtwo">
             <h2>How to select color on the website</h2>
-            <article>There are two main color models: the additive RGB (red, green, blue) model used in electronic devices,<br>
-                and the subtractive CMYK (cyan, magenta, yellow, black) model used in print.</article>
+                <h3>There are two main color models:</h3>
+                    <p>
+                        The additive RGB (red, green, blue) model used in electronic devices, and the subtractive CMYK (cyan, magenta, yellow, black) model used in print.<br>
+                        There are two ways to set the color value：<br>
+                        1. color name.<br>
+                        2. rgb(red, green, blue)：red/green/blue are 0~255 or 0~100%;<br>
+                        For example: rgb(192, 192, 192) is gray color.
+                    </p>
+                    <ul>
+                        <li>Primary colors are colors that, when combined, create pure white.</li>
+                        <li>Secondary colors are the colors that result from combining primary colors.</li>
+                        <li>Tertiary colors are created by combining a primary with a nearby secondary color.</li>
+                    </ul>
+                <h3>RGB color list</h3>
+                    <ol>
+                        <li>rgb(255, 255, 0)：yellow</li>
+                        <li>rgb(0, 255, 255)：cyan</li>
+                        <li>rgb(255, 0, 255)：magenta</li>
+                        <li>rgb(255, 127, 0)：orange</li>
+                        <li>rgb(0, 255, 127)：spring green</li>
+                        <li>rgb(127, 0, 255)：violet</li>
+                        <li>rgb(127, 255, 0)：chartreuse green</li>
+                        <li>rgb(0, 127, 255)：azure</li>
+                        <li>rgb(255, 0, 127)：bright pink</li>
+                    </ol>
+                <h3>Complementary colors</h3>
+                    <article>
+                        A color wheel is a circle where similar colors, or hues, are located near each other, and different ones are further apart.
+                        Two colors that are opposite each other on the color wheel are called complementary colors.
+                        If two complementary colors are combined, they produce gray.
+                        When placed side by side, these colors create a strong visual contrast and appear brighter.
+                        This contrast can be distracting if it is overused on a website and can make text hard to read when placed on a complementary-colored background.
+                        It is better practice to select one color as the dominant color and use its complementary color as an accent to draw attention to specific content on the page.
+                    </article>
+                <h3>Hexadecimal / hex color values</h3>
+                    <article>
+                        A very common way to apply color to an element with CSS is using hexadecimal or hex values.
+                        Hex color values start with a # character and consist of six characters ranging from 0-9 and A-F.
+                        The first pair of characters represents red, the second pair represents green, and the third pair represents blue.
+                        With hexadecimal colors, 00 represents 0% of that color, and FF represents 100%.
+                    </article>
+                    <ol>
+                        <li>#FF0000：red</li>
+                        <li>#00FF00：green</li>
+                        <li>#0000FF：blue</li>
+                    </ol>
+                <h3>The HSL color model：hsl(hue, saturation, lightness)</h3>
+                    <article>
+                        The HSL color model, which stands for hue, saturation, and lightness, is an alternative method for representing colors. For example, hsl(hue, saturation, lightness).
+                        The CSS hsl function accepts three values: a number from 0 to 360 for hue, a percentage from 0 to 100 for saturation, and a percentage from 0 to 100 for lightness.<br>
+                        If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue is at 240 degrees.<br>
+                        Saturation is the intensity of a color ranging from 0% (gray) to 100% (pure color). You must add the percent sign (%) to the saturation and lightness values.<br>
+                        Lightness is the brightness level of a color, ranging from 0% (complete black) to 100% (complete white), with 50% representing neutrality.<br>
+                    </article>
+                <h3>Gradient：linear-gradient(gradientDirection, color1, color2, ...)</h3>
+                    <article>
+                        The CSS linear-gradient function allows you to control the direction of the transition along a line and determine which colors are used.
+                        One thing to remember is that the linear-gradient function actually creates an image element and is usually paired with the background property, which can accept an image as a value.<br>
+                        Basic syntax: linear-gradient(gradientDirection, color1, color2, ...);<br>
+                        For example: background: linear-gradient(90deg, rgb(255,0,0), rgb(0,255,0));<br>
+                        Gradient direction refers to the direction of the line used for the transition.
+                        Color1 and color2 are arguments representing the colors that will be used in the transition itself.
+                        These can be any type of color, including color keywords, hex, rgb, or hsl.
+                        Color stops allow you to fine-tune where colors are placed along the gradient line.
+                        They are a length unit like pixels (px) or percentages (%) that follow a color in the linear-gradient function.<br>
+                        For example: background: linear-gradient(90deg, rgb(255, 0, 0) 50%, rgb(0, 255, 0), rgb(0, 0, 255));<br>
+                        Even if you don't set a color stop point, the linear gradient function automatically calculates these values for you and presets to place the color evenly along the gradient line.
+                        If no gradient direction argument is provided to the linear-gradient function, it arranges colors from top to bottom, or along a 180-degree line, by default.
+                    </article>
+                <h3>Opacity</h3>
+                    <ul>
+                        <li>RGB：rgba(redValue, greenValue, blueValue, alphaValue)</li>
+                        <li>HEX：#Red Green Blue Alpha</li>
+                        <li>HSL：hsl(hue, saturation, lightness, alphaValue)</li>
+                    </ul>
+                    <article>
+                        Opacity describes how opaque, or non-transparent, something is.
+                        For example, a solid wall is opaque, and no light can pass through.
+                        But a drinking glass is much more transparent, and you can see through it to the other side.
+                        With the CSS opacity property, you can control the level of opacity or transparency of an element.
+                        With the value 0, or 0%, the element will be completely transparent, and at 1.0, or 100%, the element will be completely opaque, as it is by default.
+                        Another way to adjust the opacity of an element is by using the alpha channel.
+                        Similar to the opacity property, the alpha channel controls the level of transparency or opacity of a color.
+                        The 'rgba' function works similarly to the 'rgb' function, but it requires an additional number ranging from 0 to 1.0 for the alpha channel.<br>
+                        For example, rgba(redValue, greenValue, blueValue, alphaValue);<br>
+                    </article>
+                <h3>Shadow：box-shadow: offsetX offsetY color;</h3>
+                    <article>
+                        The <span class="mark">box-shadow</span> property allows you to apply one or more shadows around an element.<br>
+                        Here's how the offsetX and offsetY values work:
+                    </article>
+                    <ul>
+                        <li>Both <span class="mark">offsetX</span> and <span class="mark">offsetY</span> accept numerical values in pixels (px) and other CSS units.</li>
+                        <li>A positive offsetX value moves the shadow to the right, and a negative value moves it to the left.</li>
+                        <li>A positive offsetY value moves the shadow down, and a negative value moves it up.</li>
+                        <li>If you want a value of zero (0) for either or both offsetX and offsetY, you don't need to add a unit. Every browser understands that zero means no change.</li>
+                    </ul>
+                    <article>
+                        The height and width of the shadow are determined by the height and width of the element to which it is applied.
+                        You can also use an optional <span class="mark">spreadRadius</span> value to extend the reach of the shadow.
+                        Notice that the edges of the shadow are sharp.
+                        This is because there is an optional <span class="mark">blurRadius</span> value for the <span class="mark">box-shadow</span> property.<br>
+                        For example, box-shadow: offsetX offsetY blurRadius color;<br>
+                        If a blurRadius value isn't included, it defaults to 0 and produces sharp edges.
+                        The higher the value of blurRadius, the greater the blurring effect will be.
+                        If you want to extend the shadow further, you can achieve this by using the optional <span class="mark">spreadRadius</span> value.<br>
+                        For example, box-shadow: offsetX offsetY blurRadius spreadRadius color;<br>
+                    </article>
         </section>
 
         <section class="backgroundtwo">
             <h2>Application</h2>
-            <h3>you want to center the #menu horizontally.</h3>
-            <ol>
-                <li>You can do this by setting its margin-left and margin-right properties to auto.<br>
-                    Think of the margin as invisible space around an element.<br>
-                    Using these two margin properties, center the #menu element within the body element.</li>
-            </ol>
-            <h3>If you want to align the items on the menu to the left and the prices to the right.</h3>
-            <ol>
-                <li>In the class name for items, use the 'text-align' property set to 'left', and in the class name for prices, use the 'text-align' property set to 'right'.</li>
-                <li>That is kind of what you want, but now it would be nice if the flavor and price were on the same line.<br>
-                    p elements are block-level elements, so they take up the entire width of their parent element.<br>
-                    To get them on the same line, you need to apply some styling to the p elements so they behave more like inline elements.</li>
-                <li>Start by adding a class attribute with the value [item] to the first [article] element in the HTML.</li>
-                <li>The p elements are nested in an [article] element with the class attribute of [item].<br>
-                    You can style all the p elements nested anywhere in elements with a class named item.</li>
-                <li>Using the above selector, add a 'display' property with value 'inline-block' so the p elements behave more like inline elements.</li>
-                <li>That's closer, but the price didn't stay over on the right.<br>
-                    This is because inline-block elements only take up the width of their content.<br>
-                    To spread them out, add a width property to the [items] and [price] class selectors that have a value of 50% each.</li>
-                <li>Styling the p elements as inline-block and placing them on separate lines in the code creates an extra space to the right of the first p element, causing the second one to shift to the next line.<br>
-                    One way to fix this is to make each p element's width a little less than 50%.</li>
-                <li>That worked, but there is still a little space on the right of the [price].<br>
-                    You could keep trying various percentages for the widths.<br>
-                    Instead, use the back space key on your keyboard to move the p element with the class [price] next to the p element with the class [items] so that they are on the same line in the editor.<br>
-                    Make sure there is no space between them.</li>
-                <li>Now go ahead and change both the [items] and [price] class' widths to be 50% again.</li>
-                <p>If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.<br>
-                    This is because the width of the p elements on the left side can only take up 50% of the space.</p>
-                <li>Since you know the prices on the right have significantly fewer characters, change the [items] class width value to be 75% and the [price] class width value to be 25%.</li>
-                <li>On a very wide screen, the [coffee] and [dessert] appear far apart from their prices.<br>
-                    You can add a 'max-width' property to the [menu] class with a value of [500px] to prevent it from growing too wide.</li>
-            </ol>
+                <h3>you want to center the #menu horizontally.</h3>
+                    <ol>
+                        <li>You can do this by setting its margin-left and margin-right properties to auto.<br>
+                            Think of the margin as invisible space around an element.<br>
+                            Using these two margin properties, center the #menu element within the body element.</li>
+                    </ol>
+                <h3>If you want to align the items on the menu to the left and the prices to the right.</h3>
+                    <ol>
+                        <li>In the class name for items, use the 'text-align' property set to 'left', and in the class name for prices, use the 'text-align' property set to 'right'.</li>
+                        <li>That is kind of what you want, but now it would be nice if the flavor and price were on the same line.<br>
+                            p elements are block-level elements, so they take up the entire width of their parent element.<br>
+                            To get them on the same line, you need to apply some styling to the p elements so they behave more like inline elements.</li>
+                        <li>Start by adding a class attribute with the value [item] to the first [article] element in the HTML.</li>
+                        <li>The p elements are nested in an [article] element with the class attribute of [item].<br>
+                            You can style all the p elements nested anywhere in elements with a class named item.</li>
+                        <li>Using the above selector, add a 'display' property with value 'inline-block' so the p elements behave more like inline elements.</li>
+                        <li>That's closer, but the price didn't stay over on the right.<br>
+                            This is because inline-block elements only take up the width of their content.<br>
+                            To spread them out, add a width property to the [items] and [price] class selectors that have a value of 50% each.</li>
+                        <li>Styling the p elements as inline-block and placing them on separate lines in the code creates an extra space to the right of the first p element, causing the second one to shift to the next line.<br>
+                            One way to fix this is to make each p element's width a little less than 50%.</li>
+                        <li>That worked, but there is still a little space on the right of the [price].<br>
+                            You could keep trying various percentages for the widths.<br>
+                            Instead, use the back space key on your keyboard to move the p element with the class [price] next to the p element with the class [items] so that they are on the same line in the editor.<br>
+                            Make sure there is no space between them.</li>
+                        <li>Now go ahead and change both the [items] and [price] class' widths to be 50% again.</li>
+                        <p>If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.<br>
+                            This is because the width of the p elements on the left side can only take up 50% of the space.</p>
+                        <li>Since you know the prices on the right have significantly fewer characters, change the [items] class width value to be 75% and the [price] class width value to be 25%.</li>
+                        <li>On a very wide screen, the [coffee] and [dessert] appear far apart from their prices.<br>
+                            You can add a 'max-width' property to the [menu] class with a value of [500px] to prevent it from growing too wide.</li>
+                    </ol>
 
             <h2>範例</h2>
                 <p>範例1，nav是選擇器（selector）：一種用於選擇 HTML 元素的模式或規則。<br>
