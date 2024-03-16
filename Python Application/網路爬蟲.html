@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>網路爬蟲</title>
+    <link rel="stylesheet" href="../NavigationBar.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../highlight/styles/github-dark.css">
     <script src="../highlight/highlight.js"></script> 
@@ -48,10 +49,10 @@
             <article>If you want to open a blank Chrome browser, you can enter Python and execute the following code, or save the code into a file and run it directly.</article>
             <section class="program">
                 <pre><code class="python">
-    from selenium import webdriver
+from selenium import webdriver
 
-    cService = webdriver.ChromeService(executable_path='your driver path') #在 Selenium 4.6 或以上的版本中，你不能直接將 executable_path 傳遞給 Chrome()，前面需要加上executable_path。
-    driver = webdriver.Chrome(service=cService) #建立WebDriver物件
+cService = webdriver.ChromeService(executable_path='your driver path') #在 Selenium 4.6 或以上的版本中，你不能直接將 executable_path 傳遞給 Chrome()，前面需要加上executable_path。
+driver = webdriver.Chrome(service=cService) #建立WebDriver物件
                 </code></pre>
             </section>
 
@@ -66,7 +67,11 @@
             <article>若指令的element有加s則為複數型指令，傳回列表類型的值，反之則為單數型指令，僅傳回一個值。</article>
         </section>
     </main>
-
+    <footer>
+        <section>
+            <p>Contact Method：panerter@gmail.com</p>
+        </section>
+    </footer>
     <script>
         document.querySelectorAll('pre code').forEach((block) => {
             if (block.dataset.highlighted) {

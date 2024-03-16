@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Note</title>
+    <link rel="stylesheet" href="NavigationBar.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./highlight/styles/github-dark.css">
     <script src="./highlight/highlight.js"></script> 
@@ -13,7 +14,9 @@
     <header>
         <h1>HTML Note</h1>
         <nav class="bar-menu">
-            <p><a href="index.html">Home</a></p>
+            <ul class="bar-menu">
+                <li><a href="./index.html">Home</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -69,17 +72,15 @@
                 </code></pre>
             </div>
         </section>
-
-
-        <script>
-            document.querySelectorAll('pre code').forEach((block) => {
-                if (block.dataset.highlighted) {
-                    delete block.dataset.highlighted;
-                }
-                hljs.highlightElement(block);
-                block.dataset.highlighted = 'yes';
-            });
-        </script>
     </main>
+    <script>
+        document.querySelectorAll('pre code').forEach((block) => {
+            if (block.dataset.highlighted) {
+                delete block.dataset.highlighted;
+            }
+            hljs.highlightElement(block);
+            block.dataset.highlighted = 'yes';
+        });
+    </script>
 </body>
 </html>

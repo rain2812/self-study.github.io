@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Note (Cascading Style Sheets)</title>
+    <link rel="stylesheet" href="NavigationBar.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -50,7 +51,7 @@
         </section>
 
         <section class="backgroundtwo">
-            <h2>CSS屬性介紹</h2>
+            <h2>CSS elements and attributes</h2>
                 <h3>Unit/Value</h3>
                     <ul>
                         <li>color/height/width/position：顏色/高度/寬度/位置</li>
@@ -58,8 +59,8 @@
                         <li>px：像素(pixels)</li>
                         <li>vw/vh：視窗的百分之幾，vw為左右即寬度，vh為上下即高度<br>
                             For example: Change the width property's value to be 80%, to make it 80% the width of its parent element.</li>
-                        <li>border：邊角
-                        </li>
+                        <li>border：邊角</li>
+                        <li>unset：未設定，如:父元素width: 100%，子元素width: unset(將子元素的width取消父元素的設定)</li>
                         <article>
                             All HTML elements have borders, although they are typically set to none by default.
                             With CSS, you can control all aspects of an element's border and set the border on all sides or just one side at a time. To make a border visible, you need to specify its width and style.
@@ -97,6 +98,14 @@
                                 <li>oblique：與 italic 類似，將文字傾斜顯示，但是沒有為斜體設計的字體時會採用這種方式，效果可能略有差異。</li>
                             </ul>
                         <li>font-size：字體大小</li>
+                        <li>rem：The "rem" unit stands for "root em" and is relative to the font size of the HTML element.</li>
+                        <article>
+                            通常建議在響應式網頁設計中使用rem單位來設定文字大小,因為它使調整全域文字大小變得很容易。
+                            而font-size通常用於局部調整某些元素的文字大小。
+                            使用rem能夠確保無論使用者調整了瀏覽器的預設文字大小,網頁的文字也能保持一致性。
+                            rem和font-size都是用來設定文字大小的CSS單位,但它們有以下幾點主要差異:
+                        </article>
+                        <img src="./Images/rem.png" alt="rem&font-size差異">
                     </ul>
                 <h3>Background setting</h3>
                     <ul>
@@ -150,12 +159,7 @@
                         <img src="Images/Flexbox 排版技巧2.png" alt="Flexbox 排版技巧2">
                         <li>text-align：文字對齊位置，如left靠左、center置中等。</li>
                     </ul>
-                <h3>偽選擇器 (pseudo-selector)</h3>
-                    <ul>
-                        <li>a:hover：Modifying the properties that change when the mouse hovers over the link.</li>
-                        <li>a:active：Setting the properties that change when a link has been clicked.</li>
-                        <li>a:visited：Setting the properties that change when a link has been visited.</li>
-                    </ul>
+
                 <h3>cursor語法說明</h3>
                     <p>cursor 屬性用於指定當鼠標指針位於指定元素上時所顯示的<span class="wordred">游標類型</span>。<br>
                         這個屬性可以用於改變游標的樣式，以提供與用戶交互時的視覺反饋。<br>
@@ -170,6 +174,23 @@
                         <li>crosshair：顯示為十字線，用於表明用戶可以進行選擇或測量操作。</li>
                         <li>not-allowed：顯示為圓圈加斜線，表示操作不被允許。</li>
                     </ul>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>偽選擇器 (pseudo-selector)</h2>
+                <ul>
+                    <li>a:hover：Modifying the properties that change when the mouse hovers over the link.</li>
+                    <li>a:active：Setting the properties that change when a link has been clicked.</li>
+                    <li>a:visited：Setting the properties that change when a link has been visited.</li>
+                    <li>p:last-of-type：You can select the last element of a specific type using the last-of-type CSS pseudo-class.<br>
+                        That will select the last p element. Create a new selector that targets the last fieldset element and set its border-bottom to none.</li>
+                </ul>
+            <h2>The attribute selector</h2>
+                <article>
+                    To style the submit button, you can use an attribute selector, which selects an element based on the given attribute value.<br>
+                    Here is an example: input[name="password"] {} 即為設定name名稱為password的input元素；input[type="radio"] {} 即為設定type為radio的input元素<br>
+                    The above selects input elements with a name attribute value of password.
+                </article>
         </section>
 
         <section class="backgroundtwo">
@@ -338,5 +359,10 @@
                 <img src="Images/css 間距設置.png" alt="四個邊的設置順序">
         </section>
     </main>
+    <footer>
+        <section>
+            <p>Contact Method：panerter@gmail.com</p>
+        </section>
+    </footer>
 </body>
 </html>
