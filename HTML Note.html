@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Note</title>
+    <link rel="stylesheet" href="NavigationBar.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./highlight/styles/github-dark.css">
     <script src="./highlight/highlight.js"></script> 
@@ -13,36 +14,40 @@
     <header>
     <h1>HTML Note (Hypertext Markup Language)</h1>
     <nav class="bar-menu">
-        <p><a href="index.html">Home</a></p>
+        <ul class="bar-menu">
+            <li><a href="./index.html">Home</a></li>
+        </ul>
     </nav>
     </header>
     <main>
         <section class="backgroundtwo">
-            <h2>Build a new file</h2>
-            <ul>
+            <h2>Create a new HTML file</h2>
+            <ol>
+                <li>HTML tags give a webpage its structure.<br>
+                    You can use HTML tags to add photos, buttons, and other elements to your webpage.</li>
                 <li>All pages should begin with &lt;!DOCTYPE html&gt;.<br>
                     This special string is known as a declaration and ensures the browser tries to meet industry-wide specifications.</li>
                 <li>Notice that the entire contents of the page are nested within an html element.<br>
                     All other elements must be descendants of this html element.<br>
                     You must to add the lang attribute with the value 'language' to the opening html tag to specify that the language of the page is 'language'.</li>
-                <li>The content inside the head tag will not be displayed on the web page.<br>
-                    It mainly consists of backend data such as the document's character encoding, keywords, and scripts.</li>
+                <li>Add a head element, which mainly consists of the file's character encoding, keywords, scripts, and other backend data.<br>
+                    The content inside the head tag will not be displayed on the web page.</li>
                 <li>You can set browser behavior by adding self-closing meta elements in the head.<br>
                     Inside the head element, nest a meta element with an attribute named charset.<br>
                     Set to the value to utf-8 which tells the browser how to encode characters for the page.</li>
-                <li>The title element：It determines what browsers show in the title bar or tab for the page.</li>
-                    <ul class="Contractiontwo">
-                        <li>One of several elements that provide extra information not visible on the web page, but it is useful for search engines or how the page gets displayed.</li>
-                        <li>It can be displayed in two ways:</li>
-                    </ul>
-                    <ol class="Contractiontwo">
-                        <li>in the title bar when the page is open</li>
-                        <li>in the browser tab for the page when you hover on it.<br>
-                            Even if that tab is not active, once you hover on the tab, the title text is displayed.</li>
-                    </ol>
                 <li>For the styling of the page to look similar on mobile as it does on a desktop or laptop, you need to add a meta element with a special content attribute within the head element.<br>
-                    For example:<span class="wordred">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span></li>
-            </ul><hr class="hrone">
+                    For example:<span class="wordred">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span></li>
+                <li>The title element：it determines what browsers display in the title bar or tab for the page.<br>
+                    One of the several elements that provide additional information not visible on the webpage, but are useful for search engines or determining how the page is displayed.<br>
+                    It can be displayed in two ways:</li>
+                    <ol class="Contractiontwo">
+                        <li>In the title bar when the page is open.</li>
+                        <li>In the browser tab, the page title appears when you hover over it.<br>
+                            Even if the tab is not active, the title text is displayed when you hover over the tab.</li>
+                    </ol>
+                <li>All page content elements that should be rendered to the page go inside the body element.<br>
+                    However, other important information goes inside the head element.</li>
+            </ol><hr class="hrone">
             <h2>How to quickly establish the basic structure of html files</h2>
             <ul>
                 <li>After entering the exclamation point, press the tab key to quickly create the basic structure of the html file.</li>
@@ -51,54 +56,176 @@
         </section>
 
         <section class="backgroundtwo">
-            <h2>Basics</h2>
-            <ol>
-                <li>HTML tags give a webpage its structure.<br>
-                    You can use HTML tags to add photos, buttons, and other elements to your webpage.</li>
-                <li>You have been limited regarding the presentation and appearance of the content you create.<br>
+            <h2>Style</h2>
+                <article>You have been limited regarding the presentation and appearance of the content you create.<br>
                     To start taking control, add a style element within the head element.<br>
-                    You can add style to an element by specifying it in the style element and setting a property.</li>
-                    <ul>
-                        <li>To directly write CSS syntax within the HTML document, it needs to be placed within the style tag.</li>
-                        <li>To write CSS syntax within the head of HTML, it needs to be enclosed within the style tag.</li>
-                    </ul>
-                <li>All page content elements that should be rendered to the page go inside the body element.<br>
-                    However, other important information goes inside the head element.</li>
-                <li>HTML elements have opening tags like &lt;h1&gt; and closing tags like &lt;/h1&gt;.<br>
-                    The text for an element goes between its opening and closing tags.</li>
-                <li>Comment：Commenting allows you to leave messages without affecting the browser display.<br>
-                    It also allows you to make code inactive. A comment in HTML starts with <span class="wordgreen">&lt;!--, contains any number of lines of text, and ends with --&gt;</span>.<br>
-                    For example, the comment <span class="wordgreen">&lt;!-- TODO: Remove h1 --&gt; </span>contains the text TODO: Remove h1.</li>
-                <li>HTML5 has some elements that identify different content areas.<br>
-                    These elements make your HTML easier to read and help with Search Engine Optimization (SEO) and accessibility.</li>
-                <li>Nesting and indantation：Put the element inside the main element. This is called nesting.<br>
-                    Nested elements should be placed two spaces further to the right of the element they are nested in.<br>
-                    This spacing is called indentation and it is used to make HTML easier to read.</li>
-                <li>After the main element, you could add a footer element.</li>
+                    You can add style to an element by specifying it in the style element and setting a property.</article>
+                <ul class="Contractiontwo">
+                    <li>To directly write CSS syntax within the HTML document, it needs to be placed within the style tag.</li>
+                    <li>To write CSS syntax within the head of HTML, it needs to be enclosed within the style tag.</li>
+                </ul>
+            <h2>Script</h2>
+                <article>
+                    Scripts are pieces of code written in programming languages like JavaScript that can add interactivity, animations, and dynamic behavior to web pages.
+                    They are typically included in the HTML document using the script element.<br>
+                    Scripts can be used for a wide variety of purposes, such as:<br>
+                    網頁中的Script是用程式語言(如JavaScript)編寫的代碼片段,可以為網頁添加互動性、動畫和動態行為。它們通常使用script元素包含在HTML文檔中。Script可以用於各種用途,例如:<br>
+                </article>
+                <ol class="Contractiontwo">
+                    <li>Responding to user events. (clicks, mouse movements, keyboard input, etc.) 響應用戶事件</li>
+                    <li>Manipulating and modifying the content and structure of the page dynamically. 動態操作和修改頁面內容和結構</li>
+                    <li>Validating form data before submission. 在提交之前驗證表單數據</li>
+                    <li>Creating animations and visual effects. 創建動畫和視覺效果</li>
+                    <li>Retrieving and updating data from servers. (AJAX) 從服務器檢索和更新數據</li>
+                    <li>Controlling multimedia content like videos and audio. 控制多媒體內容,如視頻和音頻</li>
+                    <li>Providing enhanced user experiences and interactions. 提供增強的用戶體驗和交互</li>
+                </ol>
+                <article>
+                    Scripts can be either embedded directly within the HTML file or loaded from an external file.
+                    External scripts are preferred as they promote code reusability and separates concerns between structure (HTML), presentation (CSS), and behavior (JavaScript).<br>
+                    Script可以直接嵌入HTML文件中,也可以從外部文件加載。更好的做法是使用外部Script,因為它促進了代碼重用,並將結構(HTML)、表現(CSS)和行為(JavaScript)分開。
+                </article>
+            <h2>Comment</h2>
+                <article>
+                    Commenting allows you to leave messages without affecting the browser display.
+                It also allows you to make code inactive. A comment in HTML starts with <span class="wordgreen">&lt;!--, contains any number of lines of text, and ends with --&gt;</span>.
+                For example, the comment <span class="wordgreen">&lt;!-- TODO: Remove h1 --&gt; </span>contains the text TODO: Remove h1.
+                </article>
             </ol>
         </section>
 
         <section class="backgroundtwo">
             <h2>HTML elements and attributes</h2>
+                <h3>HTML elements basics</h3>
+                    <ul>
+                        <li>HTML elements have opening tags like &lt;h1&gt; and closing tags like &lt;/h1&gt;.<br>
+                            The text for an element goes between its opening and closing tags.</li>
+                        <li>HTML5 has some elements that identify different content areas.<br>
+                            These elements make your HTML easier to read and help with Search Engine Optimization (SEO) and accessibility.</li>
+                        <li>Nesting and indantation：Put the element inside the main element. This is called nesting.<br>
+                            Nested elements should be placed two spaces further to the right of the element they are nested in.<br>
+                            This spacing is called indentation and it is used to make HTML easier to read.</li>
+                    </ul>
+                <h3>Typography and Layout</h3>
+                    <ol>
+                        <li>Heading：The h1 through h6 heading elements are used to signify the importance of content below them.<br>
+                            The lower the number, the higher the importance, so h2 elements have less importance than h1 elements.<br>
+                            Only use one h1 element per page and place lower importance headings below higher importance headings.<br>
+                            When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.</li>
+                        <li>section：Before adding any new content, you should make use of a section element to separate the photos content from the future content.</li>
+                        <li>br：Line break</li>
+                        <li>hr：Divider<br>
+                            hr elements are self closing.</li>
+                        <li>span：一個內聯元素（inline element），通常用於將文本的一部分樣式化，或者用於將行內元素包裹起來以應用 CSS 樣式。<br>
+                            通常用於將文字或行內元素（如超連結、圖像等）包裹起來，以便對它們進行樣式設置。</li>
+                        <li>div：一個區塊級元素（block element），通常用於組織和佈局 HTML 內容，並且可以包含其他的 HTML 元素。<br>
+                            通常用於創建獨立的區域，並且可以對這些區域進行樣式設置和操作。</li>
+                    </ol>
                 <h3>Text on websites</h3>
-                <ul>
-                    <li>The p element： is used to create a paragraph of text on websites.</li>
-                    <li>The article element：commonly contain multiple elements that have related information.</li>
-                    <li>The em element：to italicize text and the strong element to bold text when emphasizing fonts.</li>
-                </ul>
-
-                <h3>Typography</h3>
-                <ol>
-                    <li>Heading：The h1 through h6 heading elements are used to signify the importance of content below them.<br>
-                        The lower the number, the higher the importance, so h2 elements have less importance than h1 elements.<br>
-                        Only use one h1 element per page and place lower importance headings below higher importance headings.<br>
-                        When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.</li>
-                    <li>section：Before adding any new content, you should make use of a section element to separate the photos content from the future content.<br></li>
-
-                    <li>br：Line break</li>
-                    <li>hr：Divider<br>
-                        hr elements are self closing.</li>
-                </ol>
+                    <ul>
+                        <li>The p element is used to create a paragraph of text on websites.</li>
+                        <li>The article element commonly contains multiple elements that have related information.</li>
+                        <li>The em element is used to italicize text, and the strong element is used to bold text when emphasizing fonts.</li>
+                    </ul>
+                <h3>Order List</h3>
+                    <ol>
+                        <li>&lt;ul&gt; is used to start an unordered list, and each item in the list is represented by &lt;li&gt; (list item) tags.</li>
+                        <li>&lt;ol&gt; is used to start an ordered list, and each item in the list is represented by &lt;li&gt; (list item) tags. The numbering or sequencing of the items is handled automatically by the browser.</li>
+                        <li>&lt;li&gt; is used to represent each item in a list. It should be nested inside either a &lt;ul&gt; or &lt;ol&gt; element to indicate whether it's part of an unordered or ordered list, respectively.</li>
+                    </ol>               
+                <h3>Form</h3>
+                    <ul>
+                        <li>Teh fieldset element：The fieldset element is used to group related form controls together, and is often combined with the legend element to provide a label or caption for the group.</li>
+                        <li>The label element：The label element is used to provide a descriptive label for form controls, such as input fields, checkboxes, and radio buttons.<br>
+                            It helps improve accessibility by associating the label with the corresponding form control using the `for` attribute.</li>
+                        <li>The select element：The select element is used to create a dropdown list or a list box, allowing users to choose one or more options from a predefined list.<br>
+                            It provides a compact way to present many options in a small space.</li>
+                        <li>The option element：The option element represents each individual choice within a select element's dropdown list or list box.<br>
+                            It specifies the value and label for each option that users can select.<br>
+                            Multiple option elements can be nested inside a single select element to create the list of choices.</li>
+                        <article><span class="wordred">
+                            If the value attribute is not specified in the option element, when the user selects the option from the drop-down menu, the value sent to the server will be the text content in the option element.
+                            If the value attribute is specified, the specified value will be returned.
+                            This can distinguish between the text displayed to the user and the value actually sent to the server, making the program clearer and easier to maintain.
+                        </span></article>
+                    </ul>
+                <h3>The input element</h3>
+                    <ol>
+                        <li>The id attribute：可以與label元素的for屬性作連結。</li>
+                        <li>The name attribute：當使用type="radio"時，網頁上並不知道哪些選項是一組的(僅能選一個)，此時將同一組的選項定義相同的name以做分組。</li>
+                        <li>The value attribute：當使用type為submit時，用此屬性顯示按鈕上的文字。</li>
+                        <li>The type attribute：</li>
+                        <ul class="Contractiontwo">
+                            <li>text：If the type is not specified, the browser will default to text.</li>
+                            <li>min/max/number：輸入最小值/最大值/數字類型</li>
+                            <li>email：The email type only allows emails with an "@" symbol and a dot (.) symbol in the domain.</li>
+                            <li>radio：The radio input type is used for selecting one option from multiple options.<br>
+                                Only one radio button in a group can be selected at a time.</li>
+                            <li>checkbox：The checkbox input type is used for selecting one or more options from multiple options.<br>
+                                Unlike radio buttons, checkboxes allow the user to select multiple options simultaneously. </li>
+                            <li>password：The password type obscures the input, and warns if the site does not use HTTPS.</li>
+                            <li>submit：The submit type is used to create a submit button. When the user clicks on this button, the form data is submitted to the server for processing.</li>
+                            <li>checkbox：</li>
+                        </ul>
+                        <li>The minlength attribute：Certain types of attribute values come with built-in form validation. For example, the "type" attribute set to "email" requires the value to be a valid email address.<br>
+                            Add custom validation to the password input element by including a "minlength" attribute with a value of 8.<br>
+                            By doing so, it prevents the submission of inputs with fewer than 8 characters.</li>
+                        <li>The pattern attribute：</li>
+                            <article>
+                                When using type="password", you can utilize the pattern attribute to specify a regular expression that the password must adhere to in order to be deemed valid.
+                                This can replace the length limit set by the minlength attribute.
+                                Here's the English translation for the systematic way of setting up patterns in regular expressions:
+                            </article>
+                            <ol class="Contractiontwo">
+                                <li>Anchors</li>
+                                <ul class="Contractionfour">
+                                    <li>^ Matches the beginning of a string</li>
+                                    <li>$ Matches the end of a string</li>
+                                    <li>\b 可以取代 ^ 和  $作為模式的開始和結束。<br>
+                                        差別在於: ^ 和 $ 是行的開始和結束，\b 是單詞邊界；使用 ^ 和 $ 不要求模式前後有單詞字符以外的字符，使用 \b 要求模式前後至少有一個非單詞字符。</li>
+                                </ul>
+                                <li>Quantifiers</li>
+                                <ul class="Contractionfour">
+                                    <li>* Matches the preceding subpattern zero or more times</li>
+                                    <li>+ Matches the preceding subpattern one or more times</li>
+                                    <li>? Matches the preceding subpattern zero or one time</li>
+                                    <li>{n} Matches the preceding subpattern exactly n times</li>
+                                    <li>{min,} Matches the preceding subpattern at least min times</li>
+                                    <li>{min,max} Matches the preceding subpattern at least min times, but no more than max times</li>
+                                </ul>
+                                <li>Character Classes</li>
+                                <ul class="Contractionfour">
+                                    <li>[abc] Matches any character inside the brackets</li>
+                                    <li>[^abc] Matches any character not inside the brackets</li>
+                                    <li>[a-z] Matches any character in the specified range</li>
+                                    <li>. Matches any character except newline</li>
+                                </ul>
+                                <li>Grouping and Back References</li>
+                                <ul class="Contractionfour">
+                                    <li>(abc) Groups multiple patterns as a single unit</li>
+                                    <li>\1 Matches the same text as the first capturing group</li>
+                                </ul>
+                                <li>Other Special Characters</li>
+                                <ul class="Contractionfour">
+                                    <li>\d Matches any digit character</li>
+                                    <li>\D Matches any non-digit character</li>
+                                    <li>\w Matches any word character (alphanumeric & underscore)</li>
+                                    <li>\W Matches any non-word character</li>
+                                    <li>\s Matches whitespace characters</li>
+                                    <li>\S Matches non-whitespace characters</li>
+                                </ul>
+                            </ol>
+                            <article>
+                                These elements can be combined as needed to construct the desired pattern. For example, to match an email address pattern, you can use: \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b<br>
+                                This pattern ensures the email format is name@domain.com or a similar format.
+                            </article>
+                        <li>The checked attribute：此為檢查是否有正確輸入，若使用此屬性則必須輸入正確才會送出。</li>
+                    </ol>
+                <h3>The textarea element</h3>
+                    <li>The textarea element functions similarly to an input element of type text but offers the added advantage of accepting multi-line text and specifying an initial number of text rows and columns.<br>
+                        Related Attributes：</li>
+                    <li>id/rows/cols：身分/列/行。</li>
+                    <li>placeholder：The placeholder accepts a text value, which is displayed until the user starts typing.</li>
         </section>
 
         <section class="backgroundtwo">
@@ -117,29 +244,29 @@
             <div class="program">
                 <h3>For example</h3>
                 <pre><code class="language-html">
-    &lt;section&gt;
-    &lt;h2&gt;Dog Lists&lt;/h2&gt;
-    &lt;h3&gt;Things dogs love:&lt;/h3&gt;
-    &lt;ul&gt;
-        &lt;li&gt;dog nip&lt;/li&gt;
-        &lt;li&gt;laser pointers&lt;/li&gt;
-        &lt;li&gt;lasagna&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;figure&gt;
-        &lt;img src=&quot;URL&quot; alt=&quot;A slice of lasagna on a plate.&quot;&gt;
-        &lt;figcaption&gt;dogs &lt;em&gt;love&lt;/em&gt; lasagna.&lt;/figcaption&gt;  
-    &lt;/figure&gt;
-    &lt;h3&gt;Top 3 things dogs hate:&lt;/h3&gt;
-    &lt;ol&gt;
-        &lt;li&gt;flea treatment&lt;/li&gt;
-        &lt;li&gt;thunder&lt;/li&gt;
-        &lt;li&gt;other dogs&lt;/li&gt;
-    &lt;/ol&gt;
-    &lt;figure&gt;
-        &lt;img src=&quot;URL&quot; alt=&quot;Five dogs looking around a field.&quot;&gt;
-        &lt;figcaption&gt;dogs &lt;strong&gt;hate&lt;/strong&gt; other dogs.&lt;/figcaption&gt;  
-    &lt;/figure&gt;
-    &lt;/section&gt;
+&lt;section&gt;
+&lt;h2&gt;Dog Lists&lt;/h2&gt;
+&lt;h3&gt;Things dogs love:&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;dog nip&lt;/li&gt;
+    &lt;li&gt;laser pointers&lt;/li&gt;
+    &lt;li&gt;lasagna&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;URL&quot; alt=&quot;A slice of lasagna on a plate.&quot;&gt;
+    &lt;figcaption&gt;dogs &lt;em&gt;love&lt;/em&gt; lasagna.&lt;/figcaption&gt;  
+&lt;/figure&gt;
+&lt;h3&gt;Top 3 things dogs hate:&lt;/h3&gt;
+&lt;ol&gt;
+    &lt;li&gt;flea treatment&lt;/li&gt;
+    &lt;li&gt;thunder&lt;/li&gt;
+    &lt;li&gt;other dogs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;URL&quot; alt=&quot;Five dogs looking around a field.&quot;&gt;
+    &lt;figcaption&gt;dogs &lt;strong&gt;hate&lt;/strong&gt; other dogs.&lt;/figcaption&gt;  
+&lt;/figure&gt;
+&lt;/section&gt;
                 </code></pre>
             </div>
         </section>
@@ -159,24 +286,15 @@
                 <h3>For example</h3>
                 <pre>
                 <code class="language-html">
-    &lt;a href=&quot;URL&quot;&gt;&lt;img src=&quot;URL&quot; alt=&quot;If we use URL.&quot;&gt;&lt;/a&gt;
-    &lt;a href=&quot;/path/to/website.html&quot;&gt;&lt;img src=&quot;/path/to/picture.jpg&quot; alt=&quot;If we use local path.&quot;&gt;&lt;/a&gt;
-    &lt;figure&gt;
-            &lt;img src=&quot;URL&quot; alt=&quot;A slice of lasagna on a plate.&quot;&gt;
-            &lt;figcaption&gt;Just &lt;em&gt; example&lt;/em&gt; for you.&lt;/figcaption&gt;  
-    &lt;/figure&gt;
+&lt;a href=&quot;URL&quot;&gt;&lt;img src=&quot;URL&quot; alt=&quot;If we use URL.&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;/path/to/website.html&quot;&gt;&lt;img src=&quot;/path/to/picture.jpg&quot; alt=&quot;If we use local path.&quot;&gt;&lt;/a&gt;
+&lt;figure&gt;
+        &lt;img src=&quot;URL&quot; alt=&quot;A slice of lasagna on a plate.&quot;&gt;
+        &lt;figcaption&gt;Just &lt;em&gt; example&lt;/em&gt; for you.&lt;/figcaption&gt;  
+&lt;/figure&gt;
                 </code>
                 </pre>
             </div>
-        </section>
-
-        <section class="backgroundtwo">        
-            <h2>Order List</h2>
-            <ol>
-                <li>&lt;ul&gt; is used to start an unordered list, and each item in the list is represented by &lt;li&gt; (list item) tags.</li>
-                <li>&lt;ol&gt; is used to start an ordered list, and each item in the list is represented by &lt;li&gt; (list item) tags. The numbering or sequencing of the items is handled automatically by the browser.</li>
-                <li>&lt;li&gt; is used to represent each item in a list. It should be nested inside either a &lt;ul&gt; or &lt;ol&gt; element to indicate whether it's part of an unordered or ordered list, respectively.</li>
-            </ol>
         </section>
 
         <section class="backgroundtwo">
@@ -187,6 +305,7 @@
                 <li>The input element allows you several ways to collect data from a web form.<br>
                     Like img elements, input elements are self-closing and do not need closing tags.</li>
                 <li>There are many kinds of inputs you can create using the type attribute.<br>
+                    Specifying the type attribute of a form element is crucial for the browser to understand what type of data it should anticipate.<br>
                     You can easily create a password field, reset button, or a control to let users select a file from their computer.</li>
                 <li>In order for a form's data to be accessed by the location specified in the action attribute, you must give the text field a name attribute and assign it a value to represent the data being submitted.<br>
                     For example, you could use the following syntax for an email address text field: &lt;input type=&quot;text&quot; name=&quot;email&quot;&gt;</li>
@@ -229,36 +348,26 @@
             <div class="program">
                 <h3>For example</h3>
                 <pre><code class="language-html">
-    &lt;section&gt;
-        &lt;h2&gt;Dog Form&lt;/h2&gt;
-        &lt;form action=&quot;URL&quot;&gt; &lt;!--Step 1~2--&gt;
-            &lt;fieldset&gt; &lt;!--Step 16--&gt;
-                &lt;legend&gt;Is your dog an indoor or outdoor dog?&lt;/legend&gt; &lt;!--Step 17--&gt;
-                &lt;label&gt;&lt;input id=&quot;indoor&quot; type=&quot;radio&quot; name=&quot;indoor-outdoor&quot; value=&quot;indoor&quot; checked&gt; Indoor&lt;/label&gt; &lt;!--Step 11~15、22--&gt;
-                &lt;label&gt;&lt;input id=&quot;outdoor&quot; type=&quot;radio&quot; name=&quot;indoor-outdoor&quot; value=&quot;outdoor&quot;&gt; Outdoor&lt;/label&gt; &lt;!--Step 11~15--&gt;
-            &lt;/fieldset&gt; 
-            &lt;fieldset&gt; 
-                &lt;legend&gt;What&#39;s your dog&#39;s personality?&lt;/legend&gt; 
-                &lt;input id=&quot;loving&quot; type=&quot;checkbox&quot; name=&quot;personality&quot; value=&quot;loving&quot; checked&gt; &lt;label for=&quot;loving&quot;&gt;Loving&lt;/label&gt;  &lt;!--Step 18~22--&gt;
-                &lt;input id=&quot;lazy&quot; type=&quot;checkbox&quot; name=&quot;personality&quot; value=&quot;lazy&quot;&gt; &lt;label for=&quot;lazy&quot;&gt;Lazy&lt;/label&gt;
-                &lt;input id=&quot;energetic&quot; type=&quot;checkbox&quot; name=&quot;personality&quot; value=&quot;energetic&quot;&gt; &lt;label for=&quot;energetic&quot;&gt; Energetic&lt;/label&gt;
-                &lt;input type=&quot;text&quot; name=&quot;dogphotourl&quot; placeholder=&quot;dog photo URL&quot; required&gt; &lt;!--Step 3~7--&gt;
-                &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt; &lt;!--Step 8~10--&gt;
-            &lt;/fieldset&gt;
-        &lt;/form&gt;
-    &lt;/section&gt;
+&lt;section&gt;
+    &lt;h2&gt;Dog Form&lt;/h2&gt;
+    &lt;form action=&quot;URL&quot;&gt; &lt;!--Step 1~2--&gt;
+        &lt;fieldset&gt; &lt;!--Step 16--&gt;
+            &lt;legend&gt;Is your dog an indoor or outdoor dog?&lt;/legend&gt; &lt;!--Step 17--&gt;
+            &lt;label&gt;&lt;input id=&quot;indoor&quot; type=&quot;radio&quot; name=&quot;indoor-outdoor&quot; value=&quot;indoor&quot; checked&gt; Indoor&lt;/label&gt; &lt;!--Step 11~15、22--&gt;
+            &lt;label&gt;&lt;input id=&quot;outdoor&quot; type=&quot;radio&quot; name=&quot;indoor-outdoor&quot; value=&quot;outdoor&quot;&gt; Outdoor&lt;/label&gt; &lt;!--Step 11~15--&gt;
+        &lt;/fieldset&gt; 
+        &lt;fieldset&gt; 
+            &lt;legend&gt;What&#39;s your dog&#39;s personality?&lt;/legend&gt; 
+            &lt;input id=&quot;loving&quot; type=&quot;checkbox&quot; name=&quot;personality&quot; value=&quot;loving&quot; checked&gt; &lt;label for=&quot;loving&quot;&gt;Loving&lt;/label&gt;  &lt;!--Step 18~22--&gt;
+            &lt;input id=&quot;lazy&quot; type=&quot;checkbox&quot; name=&quot;personality&quot; value=&quot;lazy&quot;&gt; &lt;label for=&quot;lazy&quot;&gt;Lazy&lt;/label&gt;
+            &lt;input id=&quot;energetic&quot; type=&quot;checkbox&quot; name=&quot;personality&quot; value=&quot;energetic&quot;&gt; &lt;label for=&quot;energetic&quot;&gt; Energetic&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;dogphotourl&quot; placeholder=&quot;dog photo URL&quot; required&gt; &lt;!--Step 3~7--&gt;
+            &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt; &lt;!--Step 8~10--&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/section&gt;
                 </code></pre>
             </div>
-        </section>
-
-        <section class="backgroundtwo">
-            <h2>Layout</h2>
-            <ol>
-                <li>span：一個內聯元素（inline element），通常用於將文本的一部分樣式化，或者用於將行內元素包裹起來以應用 CSS 樣式。<br>
-                    通常用於將文字或行內元素（如超連結、圖像等）包裹起來，以便對它們進行樣式設置。</li>
-                <li>div：一個區塊級元素（block element），通常用於組織和佈局 HTML 內容，並且可以包含其他的 HTML 元素。<br>
-                    通常用於創建獨立的區域，並且可以對這些區域進行樣式設置和操作。</li>
-            </ol>
         </section>
 
         <section class="backgroundtwo">
@@ -283,16 +392,20 @@
                 <p>完成圖：</p>
                 <img src="Images/HTML 表單設計範例2.png" alt="完成圖">
         </section>
-
-        <script>
-            document.querySelectorAll('pre code').forEach((block) => {
-                if (block.dataset.highlighted) {
-                    delete block.dataset.highlighted;
-                }
-                hljs.highlightElement(block);
-                block.dataset.highlighted = 'yes';
-            });
-        </script>
     </main>
+    <footer>
+        <section>
+            <p>Contact Method：panerter@gmail.com</p>
+        </section>
+    </footer>
+    <script>
+        document.querySelectorAll('pre code').forEach((block) => {
+            if (block.dataset.highlighted) {
+                delete block.dataset.highlighted;
+            }
+            hljs.highlightElement(block);
+            block.dataset.highlighted = 'yes';
+        });
+    </script>
 </body>
 </html>
