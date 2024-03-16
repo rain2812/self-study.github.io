@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="NavigationBar.css">
+    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="./highlight/styles/github-dark.css"> <!--選擇JavaScript高亮套件的style-->
+    <script src="./highlight/highlight.js"></script> <!--套用JavaScript高亮套件-->
+    <script>hljs.highlightAll();</script> <!--套用JavaScript高亮套件-->
+</head>
+<body>
+    <header>
+        <h1>Registration Form</h1>
+        <nav class="bar-menu">
+            <ul class="bar-menu">
+                <li><a href="./index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="registration">
+            <h2>Registration Form</h2>
+            <p>Please fill out this form with the required information</p>
+            <form action="./Registration Form.html" method="POST">
+                <!--The method attribute specifies how to send form data to the URL specified in the action attribute.-->
+                <!--The form data can be sent via a GET request as URL parameters (using method="get") or via a POST request as data in the request body (using method="post").-->
+                <fieldset>
+                    <legend>Ensure that the password contains at least one number, one lowercase letter, and one uppercase letter, and is between 8 and 16 characters long.</legend>
+                    <label for="new-account">Create a New Account: <input id="new-account" type="acount" pattern="[a-zA-Z0-9]{8,}" required name="new-account"></label>
+                    <label for="new-password">Create a New Password: <input id="new-password" type="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$" required name="new-password"></label>  
+                </fieldset>
+                <!--Add a "pattern" attribute to the password input element to make the input mandatory.-->
+                <fieldset>
+                    <legend><strong>Basic Information (required)</strong></legend>
+                    <label for="first-name">Enter Your First Name: <input id="first-name" type="text" required name="first-name"></label>
+                    <label for="last-name">Enter Your Last Name: <input id="last-name" type="text" required name="last-name"></label>
+                    <label for="age">Input your age (years): <input id="age" type="number" min="5" max="120" name="age"></label>
+                    <label for="email">Enter Your Email: <input id="email" type="email" required name="email"></label>
+                    <div class="horizontal">
+                        <label for="male-gender"><input id="male-gender" type="radio" name="gender-type" checked /> Male</label>
+                        <label for="female-gender"><input id="female-gender" type="radio" name="gender-type"> Female</label>
+                    </div>
+                </fieldset>
+                <!--1.Use the for attribute and id attribute to connect the label element and the input element.-->
+                <!--2.Specifying the type attribute of a form element is important for the browser to know what kind of data it should expect.-->
+                <!--3.Add the required attribute to the input elements.-->
+                <fieldset>
+                    <legend><strong>Other Information</strong></legend>
+                    <label for="address">Enter Your Address: <input id="address" type="text" name="address"></label>
+                    <label for="phone-number">Enter Your Phone: <input id="phone-number" type="number" pattern="[0-9]{10,}" name="phone-number"></label>
+                    <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="profile-picture"></label>
+                    <label for="personal-account"><input class="vertical" id="personal-account" type="radio" name="account-type"> Personal</label>
+                    <label for="business-account"><input class="vertical" id="business-account" type="radio" name="account-type"> Business</label>
+                </fieldset>
+                <fieldset>
+                    <label for="referrer">What's your job?
+                        <select id="referrer" name="referrer">
+                            <option value="">(select one)</option>
+                            <option value="2">Student</option>
+                            <option value="3">Salaried Employee</option>
+                            <option value="4">Entrepreneur</option>
+                            <option value="5">IT Professional</option>
+                            <option value="1">Other</option>
+                        </select>
+                    </label>
+                    <label for="expectations">Tell me your expectations:
+                        <textarea id ="expectations" rows="5" cols="30" placeholder="I'd like to know more about..." name="expectations"></textarea>
+                    </label>
+                </fieldset>
+                <label for="terms-and-conditions">
+                    <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions"> I accept the <a href="./Terms and Conditions.html">terms and conditions</a>
+                </label>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>HTML code</h2>
+            <div class="program">
+                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Registration Form&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;registrationstye.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section class=&quot;registration&quot;&gt;
+            &lt;h2&gt;Registration Form&lt;/h2&gt;
+            &lt;p&gt;Please fill out this form with the required information&lt;/p&gt;
+            &lt;form action=&quot;./Registration Form.html&quot; method=&quot;POST&quot;&gt;
+                &lt;!--The method attribute specifies how to send form data to the URL specified in the action attribute.--&gt;
+                &lt;!--The form data can be sent via a GET request as URL parameters (using method=&quot;get&quot;) or via a POST request as data in the request body (using method=&quot;post&quot;).--&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Ensure that the password contains at least one number, one lowercase letter, and one uppercase letter, and is between 8 and 16 characters long.&lt;/legend&gt;
+                    &lt;label for=&quot;new-account&quot;&gt;Create a New Account: &lt;input id=&quot;new-account&quot; type=&quot;acount&quot; pattern=&quot;[a-zA-Z0-9]{8,}&quot; required name=&quot;new-account&quot;&gt;&lt;/label&gt;
+                    &lt;label for=&quot;new-password&quot;&gt;Create a New Password: &lt;input id=&quot;new-password&quot; type=&quot;password&quot; pattern=&quot;^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$&quot; required name=&quot;new-password&quot;&gt;&lt;/label&gt;  
+                &lt;/fieldset&gt;
+                &lt;!--Add a &quot;pattern&quot; attribute to the password input element to make the input mandatory.--&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;&lt;strong&gt;Basic Information (required)&lt;/strong&gt;&lt;/legend&gt;
+                    &lt;label for=&quot;first-name&quot;&gt;Enter Your First Name: &lt;input id=&quot;first-name&quot; type=&quot;text&quot; required name=&quot;first-name&quot;&gt;&lt;/label&gt;
+                    &lt;label for=&quot;last-name&quot;&gt;Enter Your Last Name: &lt;input id=&quot;last-name&quot; type=&quot;text&quot; required name=&quot;last-name&quot;&gt;&lt;/label&gt;
+                    &lt;label for=&quot;age&quot;&gt;Input your age (years): &lt;input id=&quot;age&quot; type=&quot;number&quot; min=&quot;5&quot; max=&quot;120&quot; name=&quot;age&quot;&gt;&lt;/label&gt;
+                    &lt;label for=&quot;email&quot;&gt;Enter Your Email: &lt;input id=&quot;email&quot; type=&quot;email&quot; required name=&quot;email&quot;&gt;&lt;/label&gt;
+                    &lt;div class=&quot;horizontal&quot;&gt;
+                        &lt;label for=&quot;male-gender&quot;&gt;&lt;input id=&quot;male-gender&quot; type=&quot;radio&quot; name=&quot;gender-type&quot; checked /&gt; Male&lt;/label&gt;
+                        &lt;label for=&quot;female-gender&quot;&gt;&lt;input id=&quot;female-gender&quot; type=&quot;radio&quot; name=&quot;gender-type&quot;&gt; Female&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/fieldset&gt;
+                &lt;!--1.Use the for attribute and id attribute to connect the label element and the input element.--&gt;
+                &lt;!--2.Specifying the type attribute of a form element is important for the browser to know what kind of data it should expect.--&gt;
+                &lt;!--3.Add the required attribute to the input elements.--&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;&lt;strong&gt;Other Information&lt;/strong&gt;&lt;/legend&gt;
+                    &lt;label for=&quot;address&quot;&gt;Enter Your Address: &lt;input id=&quot;address&quot; type=&quot;text&quot; name=&quot;address&quot;&gt;&lt;/label&gt;
+                    &lt;label for=&quot;phone-number&quot;&gt;Enter Your Phone: &lt;input id=&quot;phone-number&quot; type=&quot;number&quot; pattern=&quot;[0-9]{10,}&quot; name=&quot;phone-number&quot;&gt;&lt;/label&gt;
+                    &lt;label for=&quot;profile-picture&quot;&gt;Upload a profile picture: &lt;input id=&quot;profile-picture&quot; type=&quot;file&quot; name=&quot;profile-picture&quot;&gt;&lt;/label&gt;
+                    &lt;label for=&quot;personal-account&quot;&gt;&lt;input class=&quot;vertical&quot; id=&quot;personal-account&quot; type=&quot;radio&quot; name=&quot;account-type&quot;&gt; Personal&lt;/label&gt;
+                    &lt;label for=&quot;business-account&quot;&gt;&lt;input class=&quot;vertical&quot; id=&quot;business-account&quot; type=&quot;radio&quot; name=&quot;account-type&quot;&gt; Business&lt;/label&gt;
+                &lt;/fieldset&gt;
+                &lt;fieldset&gt;
+                    &lt;label for=&quot;referrer&quot;&gt;What&#39;s your job?
+                        &lt;select id=&quot;referrer&quot; name=&quot;referrer&quot;&gt;
+                            &lt;option value=&quot;&quot;&gt;(select one)&lt;/option&gt;
+                            &lt;option value=&quot;2&quot;&gt;Student&lt;/option&gt;
+                            &lt;option value=&quot;3&quot;&gt;Salaried Employee&lt;/option&gt;
+                            &lt;option value=&quot;4&quot;&gt;Entrepreneur&lt;/option&gt;
+                            &lt;option value=&quot;5&quot;&gt;IT Professional&lt;/option&gt;
+                            &lt;option value=&quot;1&quot;&gt;Other&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/label&gt;
+                    &lt;label for=&quot;expectations&quot;&gt;Tell me your expectations:
+                        &lt;textarea id =&quot;expectations&quot; rows=&quot;5&quot; cols=&quot;30&quot; placeholder=&quot;I&#39;d like to know more about...&quot; name=&quot;expectations&quot;&gt;&lt;/textarea&gt;
+                    &lt;/label&gt;
+                &lt;/fieldset&gt;
+                &lt;label for=&quot;terms-and-conditions&quot;&gt;
+                    &lt;input class=&quot;inline&quot; id=&quot;terms-and-conditions&quot; type=&quot;checkbox&quot; required name=&quot;terms-and-conditions&quot;&gt; I accept the &lt;a href=&quot;./Terms and Conditions.html&quot;&gt;terms and conditions&lt;/a&gt;
+                &lt;/label&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+            &lt;/form&gt;
+    &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+             </div>
+        </section>
+
+        <section class="backgroundtwo">
+            <h2>CSS code</h2>
+            <div class="program">
+                <pre><code class="language-css">
+* { /* 將邊框預設值歸零 */
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(90deg,rgba(250, 235, 215), rgba(250, 235, 215, 0.5),rgba(250, 235, 215, 1));
+    color: #2657b1;
+    font-family: Tahoma;
+    font-size: 16px;
+}
+
+h2, p {
+    margin: 1em auto;
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 300px;
+    width: 60vw;
+}
+
+fieldset {
+    border: none;
+    padding: 0.5rem 0;
+    margin: 1rem 0 0;
+    border-bottom: 3px solid #3b3b4f;
+}
+
+fieldset:last-of-type {
+border-bottom: none;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    margin: 10px 0 0;
+    min-height: 2em;
+}
+
+input, textarea {
+    background-color: #a7753c33;
+    border: 1px solid #bd85328e;
+    color: #000000;
+}
+
+.horizontal {
+    display: flex;
+    width: unset;
+    margin: 0 0.5em 0 0;
+    margin-right: 10px; /* 可選,設置元素之間的間距 */
+}
+    
+.horizontal label {
+    display: flex;
+    align-items: center;
+    margin-right: 100px; /* 為水平排列的 label 添加間距 */
+}
+    
+.horizontal label input {
+    margin: 0 10px 2px; /* 為單選按鈕和文字留出一些間距 */
+}
+
+.vertical {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+}
+
+.inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 60%;
+    min-width: 300px;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #a7753c83;
+    border-color: white;
+    cursor: pointer; /* 鼠標變成手指 */
+}
+
+input[type="file"] {
+    padding: 1px 2px;
+}
+
+a {
+    color: #0c44ad;
+}
+                </code></pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <p>Contact Method：panerter@gmail.com</p>
+        </section>
+    </footer>
+    <script> //套入JavaScript以在網頁上顯示代碼編輯框
+        document.querySelectorAll('pre code').forEach((block) => {
+            if (block.dataset.highlighted) {
+                delete block.dataset.highlighted;
+            }
+            hljs.highlightElement(block);
+            block.dataset.highlighted = 'yes';
+        });
+    </script>
+</body>
+</html>
