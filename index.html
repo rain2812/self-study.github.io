@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rain's self-study website</title>
+    <link rel="stylesheet" href="NavigationBar.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,6 +43,7 @@
             <li><a href="HTML Note.html">HTML Note</a></li>
             <li><a href="CSS Note.html">CSS Note</a></li>
             <li><a href="JavaScript Note.html">JavaScript Note</a></li>
+            <li><a href="Registration Form.html">Registration Form</a></li>
             <li><a href="Responsive Web Design.html">Responsive Web Design</a></li>
           </ul>
         </li>
@@ -55,7 +57,56 @@
         </li>
       </ul>
     </nav>
-
+    </header>
+    <main>
+      <section class="content">
+          <div class="statement one">
+            <h2>This website is for personal learning and note-taking purposes!</h2>
+          </div>
+          <div class="statement two">
+            <h3>
+              The main content focuses on programming, web design, AI applications, and English learning. <br>
+              If there are other learning topics in the future, they will also be added here.
+            </h3>
+          </div>
+          <details class="Update record">
+            <summary><a href="./Update record.html">Update record</a></summary>
+            <p>v1.2 2024.03.16</p>
+            <p>v1.1 2024.03.13</p>
+          </details>
+      </section>
+      
+      <section class="newsletter">
+          <p><strong>Welcome to subscribe to my website newsletter, where you can receive updates on new content periodically!</strong></p>
+          <form>
+            <input type="email" placeholder="Please enter your email" required>
+            <button type="submit">Send out</button>
+          </form>
+      </section>
+    </main>
+    <footer>
+        <section>
+          <p>Contact Method：panerter@gmail.com</p>
+          <p>References：</p>
+          <ul>
+            <li>超圖解python程式入門 - Book</li>
+            <li>PYTHON自學聖經 - Book</li>
+            <li>機器學習的數學基礎 - Book</li>
+            <li>超圖解秒懂英文文法 - Book</li>
+            <li>NO HARD FEELINGS - Book</li>
+            <li>THE POWER OF HABIT - Book</li>
+            <li>Learning English Through Stories - <a href="https://www.amazon.com/gp/product/B07W6S27FR/ref=kinw_myk_ro_title">Amazon.com</a></li>
+            <li>月半人的家 - <a href="https://moon-half.info/p/5074">moon-half.info</a></li>
+            <li>免費學習Grandmacn - <a href="https://grandmacan.com/">grandmacan.com</a></li>
+            <li>C w C 頻道 iPhone - <a href="https://www.youtube.com/@CwCiPhone">Youtube.com</a></li>
+            <li>PAPAYA 電腦教室 - <a href="https://www.youtube.com/@papayaclass">Youtube.com</a></li>
+            <li>精辟易明前後端網站應用程式教學-梁浩賢 - <a href="https://www.leunghoyin.hk/">leunghoyin.hk</a></li>
+            <li>W3C網站規劃與設計 - <a href="https://dic.vbird.tw/webdesign/">dic.vbird.tw</a></li>
+            <li>Semantic UI - <a href="https://semantic-ui.com/introduction/getting-started.html">semantic-ui.com</a></li>
+            <li>No Copyright - <a href="https://www.freecodecamp.org">FreeCodeCamp.org</a></li>
+          </ul>
+        </section>
+    </footer>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const menuButton = document.querySelector('.menu');
@@ -86,34 +137,5 @@
         });
       });
     </script>
-
-    </header>
-    <main>
-      <section class="content">
-          <h2>This website is for personal learning and note-taking purposes!</h2>
-          <h3>
-            The main content focuses on programming, web design, AI applications, and English learning. <br>
-            If there are other learning topics in the future, they will also be added here.
-          </h3>
-      </section>
-      
-      <section class="newsletter">
-          <p><strong>Welcome to subscribe to my website newsletter, where you can receive updates on new content periodically!</strong></p>
-          <form>
-            <input type="email" placeholder="Please enter your email" required>
-            <button type="submit">Send out</button>
-          </form>
-      </section>
-    </main>
-    <footer>
-        <section>
-          <p>Resources：</p>
-          <ul>
-            <li>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></li>
-            <li>https://www.youtube.com/@papayaclass</li>
-            <li>https://grandmacan.com/</li>
-          </ul>
-        </section>
-    </footer>
 </body>
 </html>
