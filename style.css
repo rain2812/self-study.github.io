@@ -3,27 +3,6 @@
     margin: 0;
 }
 
-header{ /* 導覽列設置 */
-    background-color: rgb(0, 0, 0);
-    height: 150px;
-    width:100%;
-    position: sticky;
-    top: 0; /* 注意需設定 top, left, right 或 bottom，這樣才能在捲動後固定在指定的位置 */
-}
-
-h1 {
-    color: rgb(255, 255, 255);
-    background-image: url("Images/logo.png"); /* LOGO圖 */
-    background-size: contain; /* 背景圖片完全顯示在容器內，不會被裁切 */
-    background-repeat: no-repeat; /* 背景圖片不重複顯示 */
-    background-position: center; /* 將背景圖片在水平方向上左對齊，並垂直居中 */
-    position: absolute;
-    top: 0; /* LOGO位置調整 */
-    line-height: 150px; /* LOGO行高調整 */
-    width: 33vw; /* LOGO寬度 */
-    text-indent: -9999px; /* 將標題文字移走，只留LOGO */
-}
-
 h2  {
     font-size: 28px; /* 原值24px */
     color:rgb(0, 48, 204);
@@ -43,14 +22,14 @@ h3 {
 p {
     font-size: 18px;
     margin-bottom: 10px;
-    padding-right: 1000px;
+    padding-right: 1000px; /* 內文長度過長後換行 */
 }
 
 article {
     margin-bottom: 10px;
     font-size: 20px;
     text-indent: 2em; /* 縮排 */
-    padding-right: 1000px;
+    padding-right: 1000px; /* 內文長度過長後換行 */
 }
 
 img {
@@ -68,51 +47,15 @@ img {
     color: green;
 }
 
-.top-level-menu { /* 第一層導覽選單的 CSS 選擇器 */
-    position: absolute;
-    right: 5vw;
-    top: 0;
-    color: white;
-    line-height: 150px; /* 設置行高 */
-}
-  
-.top-level-menu li { /* 首頁導覽列外觀及排版設置 */
-    display: inline;
-    margin-right: 4vw; /* 設置文字間隔 */
-    position: relative; /* 設置導覽列第一層下拉式選單的框框位置 */
-    line-height: 20px; /* 設置導覽列第一層下拉式選單的框框行高 */
+.Contractiontwo {
+    padding-left: 25px;
 }
 
-.top-level-menu a { /* 首頁導覽列第二層選單調整 */
-    text-decoration: none; /* 移除連結的下劃線樣式，使其在瀏覽器中不顯示下劃線 */
-    display: inline-block;
+.Contractionfour {
+    padding-left: 30px;
 }
 
-.top-level-menu a:hover{ /* 移到首頁導覽列選單時出現底線 */
-    text-decoration: underline;
-    color: brown;
-}
-
-.top-level-menu li:hover > .sub-menu { /*這是一個樣式規則，當滑鼠懸停在 <li> 元素上時，將顯示相鄰的 .sub-menu 元素。 */
-    display: block;
-}
-  
-nav .sub-menu { /* 第二層選單項目的 CSS 選擇器 */
-    display: none;
-    position: absolute;
-    width: 250px; /* 設置寬度讓文字保持在同一行 */
-    top: 100%;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #ccc;
-}
-  
-nav .sub-menu li a {
-    padding: 10px;
-    color: white;
-}
-
-.content{
+.content {
     background-color: antiquewhite;
     height: 80vh; /* 確保 .indexmain 元素占滿整個視窗95%高度 */
     background-image: url(Images/Home.png);
@@ -121,7 +64,6 @@ nav .sub-menu li a {
     background-position: center;
     display: flex;
     flex-direction:column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -135,7 +77,27 @@ nav .sub-menu li a {
     color: rgb(51, 96, 192);
 }
 
-.newsletter{
+.statement.one, .statement.two {
+    text-align: center; /* 將文字水平置中 */
+}
+
+.Update.record { /* 首頁更新紀錄框 */
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    position: absolute; /* 使用絕對定位 */
+    padding: 10px;
+    margin-bottom: 20px;
+    left: 20px; /* 距離左邊 20px */
+    bottom: 200px; /* 距離底部 200px */
+    font-size: 24px;
+}
+
+.Update.record summary { /* 首頁更新紀錄框 */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.newsletter{ /* 首頁訂閱信 */
     background-color: rgb(0, 0, 0);
     color: white;
     display: flex;
@@ -147,6 +109,7 @@ nav .sub-menu li a {
 
 .newsletter p {
     margin-bottom: 10px;
+    padding: 0;
 }
 
 .newsletter input, .newsletter button {
@@ -174,17 +137,6 @@ input::placeholder {
 input:focus {
     outline: none; /* 移除輸入框邊線的預設顏色 */
     border-color: rgb(255, 255, 255); /* 指定輸入框邊線的顏色 */
-}
-
-.bar-menu a { /* 分頁導覽列連結設置 */
-    position: absolute;
-    right: 5vw;
-    top: 0;
-    color: white;
-    line-height: 150px; /* 設置行高 */
-    font-size: 16px;
-    max-width: 100%; /* 設置最大寬度為100% */
-    height: auto;
 }
 
 .backgroundone {
@@ -229,14 +181,6 @@ input:focus {
     margin: 5px 0 2px;
 }
 
-.Contractiontwo {
-    padding-left: 25px;
-}
-
-.menu {
-    display: none;
-}
-
 .program {
     margin: 0 1000px 0 10px;
 }
@@ -245,7 +189,6 @@ input:focus {
     padding: 0;
     margin: 0;
 }
-
 
 footer { /*FOOTER*/
     background-color: black;
@@ -267,20 +210,28 @@ footer { /*FOOTER*/
     .program {
         margin: 0 900px 0 10px;
     }
+
+    .newsletter p, article {
+        padding: 0;
+    }
 }
 
 /* Desktops */
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
-    header {
-        height: 150px;
-    }
-
     .content h2 {
         font-size: 27.6px;
     }
     
     .content h3 {
         font-size: 13.8px;
+    }
+
+    .Update.record p {
+        padding: 0;
+    }
+
+    .newsletter p, article {
+        padding: 0;
     }
 
     .program {
@@ -290,27 +241,8 @@ footer { /*FOOTER*/
 
 /* 平板裝置 */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-    header {
-        height: 120px;
-    }
-
-    header h1 {
-        left: 50%; /* 將背景圖置中step 1 */
-        transform: translateX(-50%); /* 將背景圖置中step 2 */
-        height: 120px;
-        width: 40vw;
-    }
-
-    .menu {
-        display: block;
-        background-color: transparent;
-        color: white;
-        font-size: 60px;
-        position: absolute;
-        top: 15px;
-        left: 30px;
-        border: none;
-        cursor: pointer;
+    p {
+        font-size: 13px;
     }
 
     .content h2 {
@@ -321,49 +253,17 @@ footer { /*FOOTER*/
         font-size: 11px;
     }
 
-    .newsletter p {
+    .Update.record h3 {
+        font-size: 21.5px;
+    }
+
+    .Update.record {
+        font-size: 21.5px;
+        padding: 0;
+    }
+
+    .newsletter p, article {
         font-size: 13px;
-    }
-
-    .top-level-menu {
-        display: none; /* 隱藏第一層選單 */
-        /* 第一層選單樣式調整 */
-        background-color: rgba(0, 0, 0, 0.8); 
-        top: 100%;
-        left: 0;
-        padding: 5px 0 5px 30px;
-        width: 150px;
-    }
-
-    .top-level-menu li { /* 第一層選單樣式調整 */
-        padding: 15px 0;
-        font-size: 12px;
-    }
-
-    .top-level-menu.show {
-        display: block; /* 點擊.menu按鈕後顯示第一層選單 */
-    }
-
-    .top-level-menu > li {
-        display: block; /* 垂直排列 */
-    }
-
-    .top-level-menu .sub-menu {
-        display: none;
-        width: 200px;
-        top: 0; /* 讓子選單頂部與父選單對齊 */
-        left: 100%; /* 將子選單顯示在第一層選單的右邊 */
-    }
-
-    .top-level-menu .sub-menu li a {
-        display: inline-block;
-        width: 150px; /* 或者根据需要设置固定宽度 */
-        white-space: nowrap; /* 防止导航列名称换行 */
-    }
-
-    .bar-menu a { /* 分頁導覽列連結設置 */
-        line-height: 120px; /* 設置行高 */
-        font-size: 18px;
     }
 
     .program {
@@ -373,108 +273,72 @@ footer { /*FOOTER*/
 
 /* 手機裝置 */
 @media screen and (max-width: 480px) {
-    header {
-        height: 50px;
-    }
-
-    header h1 {
-        left: 50%; /* 將背景圖置中step 1 */
-        transform: translateX(-50%); /* 將背景圖置中step 2 */
-        height: 50px;
-        width: 50vw;
-    }
-
     h2 {
+        font-size: 12px; /* 原值24px */
         margin: 2px 0 5px;
     }
 
     h3 {
+        font-size: 11px; /* 原值18.7px */
         margin: 5px 0px 2px;
     }
 
-    .menu {
-        display: block;
-        background-color: transparent;
-        color: white;
-        font-size: 20px;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        border: none;
-        cursor: pointer;
+    article {
+        font-size: 11px;
+        padding: 0;
     }
 
-    .content h2 {
+    p {
+        font-size: 11px;
+    }
+
+    img {
+        height: auto; /* 高度自動按比例縮放 */
+        margin-bottom: 2px; /* 添加底部間距 */
+        padding: 2px; /* 添加內邊距 */
+    }
+
+    footer {
+        font-size: 11px;
+        padding: 0;
+    }
+
+    .statement.one h2 {
         font-size: 12px;
     }
     
-    .content h3 {
+    .statement.two h3 {
         font-size: 8px;
     }
 
-    .newsletter p, footer {
-        font-size: 7px;
+    .Update.record h3 {
+        font-size: 11px;
     }
 
-    .top-level-menu {
-        display: none; /* 隱藏第一層選單 */
-        /* 第一層選單樣式調整 */
-        background-color: rgba(0, 0, 0, 0.8); 
-        top: 100%;
-        left: 0;
-        padding: 2px 0 2px 10px;
-        width: 100px;
+    .Update.record {
+        font-size: 12px;
+        padding: 0;
     }
-
-    .top-level-menu li { /* 第一層選單樣式調整 */
-        padding: 1px 0;
-        font-size: 7px;
+    
+    .newsletter p {
+        font-size: 11px;
     }
-
-    .top-level-menu li a { 
-        display: inline-block;
-        width: auto; /* 或者根据需要设置固定宽度 */
-        white-space: nowrap; /* 防止导航列名称换行 */
+    
+    .newsletter input, .newsletter button {
+        padding: 1px;
     }
-
-    .top-level-menu.show {
-        display: block;
-    }
-
-    .top-level-menu > li {
-        display: block; /* 垂直排列 */
-    }
-
-    .top-level-menu .sub-menu {
-        display: none;
+    
+    .newsletter input {
+        font-size: 11px;
         width: 150px;
-        top: 0; /* 讓子選單頂部與父選單對齊 */
-        left: 100%; /* 將子選單顯示在第一層選單的右邊 */
-    }
-
-    .top-level-menu .sub-menu li a {
-        display: inline-block;
-        width: 100px; /* 或者根据需要设置固定宽度 */
-        white-space: nowrap; /* 防止导航列名称换行 */
-    }
-
-    .bar-menu a { /* 分頁導覽列連結設置 */
-        line-height: 50px; /* 設置行高 */
-        font-size: 11px;
+        margin: 0;
     }
     
-    h2  {
-        font-size: 12px; /* 原值24px */
-    }
-    
-    h3 { 
-        font-size: 11px; /* 原值18.7px */
-    }
-
-    p, article {
+    .newsletter button {
         font-size: 11px;
+        width: 60px;
     }
-
+   
     .backgroundone li, .backgroundone p {
         font-size: 11px;
     }
@@ -493,11 +357,5 @@ footer { /*FOOTER*/
     .program {
         font-size: 9px;
         margin: 0 30px 0 10px;
-    }
-
-    img {
-        height: auto; /* 高度自動按比例縮放 */
-        margin-bottom: 2px; /* 添加底部間距 */
-        padding: 2px; /* 添加內邊距 */
     }
 }
