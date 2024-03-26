@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Note (Cascading Style Sheets)</title>
-    <link rel="stylesheet" href="NavigationBar.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/fixed.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/typography.css">
+    <link rel="stylesheet" href="./css/footer.css">
 </head>
 <body>
     <header>
@@ -37,7 +39,7 @@
                     <li>The 'rel' attribute specifies the relationship of the linked resource, and in this case, 'rel="stylesheet"' indicates that the linked resource is a style sheet file.<br>
                         This informs the browser that the file is a style sheet and needs to be applied to the document.<br>
                         However, the 'rel' attribute is not limited to just 'stylesheet'. It can be used to define different types of relationships. For example:</li>
-                        <ul>
+                        <ul class="Contractiontwo">
                             <li>rel="stylesheet"：The linked resource is a style sheet file.</li>
                             <li>rel="icon"：Specifies the website's icon.</li>
                             <li>rel="preconnect"：Specifies pre-connecting resources.</li>
@@ -46,21 +48,21 @@
                     <li>You can use the id selector to target a specific element with an id attribute.<br>
                         An id selector is defined by placing the hash symbol # directly in front of the element's id value.</li>
                     <li>A class selector is defined by a name with a dot directly in front of it.</li>
-                    <li>Comments in CSS look like this: <span class="wordgreen">/* comment here */</span></li>
+                    <li>Comments in CSS look like this：<span class="wordgreen">/* comment here */</span></li>
                 </ol>
         </section>
 
         <section class="backgroundtwo">
-            <h2>CSS elements and attributes</h2>
+            <h2>CSS Properties</h2>
                 <h3>Unit/Value</h3>
                     <ul>
                         <li>color/height/width/position：顏色/高度/寬度/位置</li>
                         <li>top/bottom/left/right：與上下左右邊的距離</li>
                         <li>px：像素(pixels)</li>
                         <li>vw/vh：視窗的百分之幾，vw為左右即寬度，vh為上下即高度<br>
-                            For example: Change the width property's value to be 80%, to make it 80% the width of its parent element.</li>
+                            For example：Change the width property's value to be 80%, to make it 80% the width of its parent element.</li>
                         <li>border：邊角</li>
-                        <li>unset：未設定，如:父元素width: 100%，子元素width: unset(將子元素的width取消父元素的設定)</li>
+                        <li>unset：未設定，如:父元素width：100%，子元素width：unset(將子元素的width取消父元素的設定)</li>
                         <article>
                             All HTML elements have borders, although they are typically set to none by default.
                             With CSS, you can control all aspects of an element's border and set the border on all sides or just one side at a time. To make a border visible, you need to specify its width and style.
@@ -68,9 +70,11 @@
                             Your border should be visible now. If no color is set, black is used by default.
                             But to enhance the readability of your code, it's better to explicitly set the border color.
                         </article>
-                        <li>radius：圓角效果</li>
+                        <li>radius：半徑(圓角效果)</li>
+                        <li>em：一個相對單位，相對於當前字體大小。它的具體值會繼承父元素的字體大小。</li>
+                        <li>rem：一個相對單位，但相對的是根元素(html)的字體大小。一個相對單位，但相對的是根元素(html)的字體大小。</li>
                     </ul>
-                <h3>線條樣式</h3>
+                <h3>Line Style</h3>
                     <ul>
                         <li>solid：直線</li>
                         <li>dashed：虛線</li>
@@ -100,10 +104,10 @@
                         <li>font-size：字體大小</li>
                         <li>rem：The "rem" unit stands for "root em" and is relative to the font size of the HTML element.</li>
                         <article>
-                            通常建議在響應式網頁設計中使用rem單位來設定文字大小,因為它使調整全域文字大小變得很容易。
+                            通常建議在響應式網頁設計中使用rem單位來設定文字大小，因為它使調整全域文字大小變得很容易。
                             而font-size通常用於局部調整某些元素的文字大小。
-                            使用rem能夠確保無論使用者調整了瀏覽器的預設文字大小,網頁的文字也能保持一致性。
-                            rem和font-size都是用來設定文字大小的CSS單位,但它們有以下幾點主要差異:
+                            使用rem能夠確保無論使用者調整了瀏覽器的預設文字大小，網頁的文字也能保持一致性。
+                            rem和font-size都是用來設定文字大小的CSS單位，但它們有以下幾點主要差異:
                         </article>
                         <img src="./Images/rem.png" alt="rem&font-size差異">
                     </ul>
@@ -115,51 +119,6 @@
                     </ul>
                 <h3>圖片size調整</h3>
                     <img src="Images/Picture size.png" alt="Picture size">
-                <h3>Typography</h3>
-                    <ul>
-                        <li>display：用來定義 HTML 元素的顯示方式。</li>
-                        <ol class="Contractiontwo">
-                            <li>block：block：元素呈現為區塊級元素，它會新起一行並且盡可能撐滿其父元素的寬度，可以設定寬度、高度、外邊距和內邊距。</li>
-                            <article><span class="wordred">When two block elements are placed next to each other, they stack on top of each other like actual blocks.
-                                The new block is now occupying the entire width of the marker, pushing the old block down to the next line.</span></article>
-                            <li>inline：元素呈現為內聯元素，它不會產生換行，只佔據它實際內容的大小，不可設定寬度和高度，水平方向上的外邊距和內邊距會起作用，垂直方向上的外邊距和 內邊距則不會。</li>
-                            <li>inline-block：元素呈現為內聯塊元素，它不會新起一行，但可以設定寬度、高度、外邊距和內邊距。</li>
-                            <li>flex：元素將以彈性盒模型顯示，可用於建立靈活的佈局。</li>
-                            <li>grid：元素將以網格佈局顯示，用於建立複雜的二維佈局。</li>
-                            <li>none：元素將不會被顯示，完全不佔據頁面的空間。</li>
-                            <li>table：元素將呈現為表格元素，可透過 table-row、table-cell 等屬性來控製表格佈局。</li>
-                            <li>inline-table：元素呈現為內嵌表格元素，類似 table，但不會新起一行。</li>
-                            <li>list-item：元素呈現為清單項，通常與 list-style 屬性一起使用，用於清單樣式的設定。</li>
-                            <li>inherit：繼承父元素的 display 屬性。</li>
-                        </ol>
-                    </ul>
-                <h3>Position佈局</h3>
-                    <ul>
-                        <li>Position:absolute：絕對位置，從版面(父元素)的左上角開始計算</li>
-                        <li>Position:relative：相對位置，從子元素原來的位置開始計算</li>
-                        <img src="Images/Position佈局.png" alt="Position">
-                        <p><span class="wordred">當子元素在使用 absolute 進行定位時，父元素本身也要有 position:relative 這行語法。</span></p>
-                        <li>Position:fixed：可以讓區塊固定在指定位置，意思是不論頁面多長，就算把捲軸拉到最底下，被設置為 fixed 的區塊還是會在頁面上相同位置。</li>
-                        <li>Position:sticky：這個屬性和 fixed 非常像，差別在於 sticky 會佔住原本版面的空間。<br>
-                            fixed 的區塊會被固定在指定位置，並且覆蓋網頁中內容，但是 sticky 會讓原本網頁的內容推到下面，不會讓 sticky 擋住原有的文字。</li>
-                        <p><span class="wordred">注意：需設定 top, left, right 或 bottom，這樣才能在捲動後固定在指定的位置</span></p>
-                        <li>text-indaent：用於設置段落或塊級元素的文本內縮（即段首縮進）。<br>
-                            這個屬性控制文本第一行與其餘行的水平間距，可以將文本的第一行移動到其餘文本之外。</li>
-                    </ul>
-                <h3>Flexbox 排版</h3>
-                    <ul>
-                        <li>display:flex：可以讓子元素產生各種排列方式</li>
-                            <p><span class="wordred">注意：此時裡面的子元素會變成橫向排列</span></p>
-                        <li>flex-direction:colume：指定flex方向為縱向排列</li>
-                        <li>justify-content:center：水平置中</li>
-                        <li>justify-content:space-between：伸展到父元素的兩側</li>
-                        <img src="Images/Flexbox 排版技巧.png" alt="Flexbox 排版技巧">
-                        <li>justify-content:space-evenly：均分子元素以外的空隙</li>
-                        <li>align-items:center：垂直置中</li>
-                        <img src="Images/Flexbox 排版技巧2.png" alt="Flexbox 排版技巧2">
-                        <li>text-align：文字對齊位置，如left靠左、center置中等。</li>
-                    </ul>
-
                 <h3>cursor語法說明</h3>
                     <p>cursor 屬性用於指定當鼠標指針位於指定元素上時所顯示的<span class="wordred">游標類型</span>。<br>
                         這個屬性可以用於改變游標的樣式，以提供與用戶交互時的視覺反饋。<br>
@@ -175,6 +134,144 @@
                         <li>not-allowed：顯示為圓圈加斜線，表示操作不被允許。</li>
                     </ul>
         </section>
+        <section class="backgroundtwo">
+            <h2>Typography</h2>
+                <h3>The text property</h3>
+                    <ol class="Contractiontwo">
+                        <li>text-indaent：用於設置段落或塊級元素的文本內縮（即段首縮進）。<br>
+                            這個屬性控制文本第一行與其餘行的水平間距，可以將文本的第一行移動到其餘文本之外。</li>
+                        <li>text-align：文字對齊位置，如left靠左、center置中等。</li>
+                    </ol>
+                <h3>Position Layout</h3>
+                    <ul>
+                        <li>Position:absolute：絕對位置，從版面(父元素)的左上角開始計算</li>
+                        <li>Position:relative：相對位置，從子元素原來的位置開始計算</li>
+                        <img src="Images/Position佈局.png" alt="Position">
+                        <p><span class="wordred">當子元素在使用 absolute 進行定位時，父元素本身也要有 position:relative 這行語法。</span></p>
+                        <li>Position:fixed：可以讓區塊固定在指定位置，意思是不論頁面多長，就算把捲軸拉到最底下，被設置為 fixed 的區塊還是會在頁面上相同位置。</li>
+                        <li>Position:sticky：這個屬性和 fixed 非常像，差別在於 sticky 會佔住原本版面的空間。<br>
+                            fixed 的區塊會被固定在指定位置，並且覆蓋網頁中內容，但是 sticky 會讓原本網頁的內容推到下面，不會讓 sticky 擋住原有的文字。</li>
+                        <p><span class="wordred">注意：需設定 top, left, right 或 bottom，這樣才能在捲動後固定在指定的位置</span></p>
+                    </ul>
+                <h3>The display property</h3>
+                    <article>用來定義 HTML 元素的顯示方式。</article>
+                    <ol class="Contractiontwo">
+                        <li>block：block：元素呈現為區塊級元素，它會新起一行並且盡可能撐滿其父元素的寬度，可以設定寬度、高度、外邊距和內邊距。</li>
+                        <article><span class="wordred">When two block elements are placed next to each other, they stack on top of each other like actual blocks.
+                            The new block is now occupying the entire width of the marker, pushing the old block down to the next line.</span></article>
+                        <li>inline：元素呈現為內聯元素，它不會產生換行，只佔據它實際內容的大小，不可設定寬度和高度，水平方向上的外邊距和內邊距會起作用，垂直方向上的外邊距和 內邊距則不會。</li>
+                        <li>inline-block：元素呈現為內聯塊元素，它不會新起一行，但可以設定寬度、高度、外邊距和內邊距。</li>
+                        <li>flex：元素將以彈性盒模型顯示，可用於建立靈活的佈局。</li>
+                        <li>grid：元素將以網格佈局顯示，用於建立複雜的二維佈局。</li>
+                        <li>none：元素將不會被顯示，完全不佔據頁面的空間。</li>
+                        <li>table：元素將呈現為表格元素，可透過 table-row、table-cell 等屬性來控製表格佈局。</li>
+                        <li>inline-table：元素呈現為內嵌表格元素，類似 table，但不會新起一行。</li>
+                        <li>list-item：元素呈現為清單項，通常與 list-style 屬性一起使用，用於清單樣式的設定。</li>
+                        <li>inherit：繼承父元素的 display 屬性。</li>
+                    </ol>
+                <h3>Flexbox Layout</h3>
+                    <article>
+                        Flexbox is a powerful layout mode in CSS, mainly used for laying out and aligning elements in one dimension.
+                        Compared to the traditional layout methods based on float or position, Flexbox provides a more concise and flexible way to align and distribute elements.
+                        Flexbox includes two core concepts：flex container and flex items.
+                     </article>
+                    <p><strong>Flex Container</strong></p>
+                    <article>
+                        By setting display：flex (allowing child elements to produce various arrangement methods, <span class="wordred">note：at this time the child elements inside will become horizontally arranged</span>)
+                        or display：inline-flex, an element is defined as a flex container. It provides layout control over two directions：the main axis and the cross axis.<br>
+                        The main properties include:
+                    </article>
+                    <ol class="Contractiontwo">
+                        <li>flex-direction：sets the direction of the main axis.</li>
+                            <ul class="Contractionfour">
+                                <li>row (default)：Horizontal axis with flex items from left to right.</li>
+                                <li>row-reverse：Horizontal reversed with flex items  from right to left.</li>
+                                <li>column：Vertical axis with flex items arranged from top to bottom.</li>
+                                <li>column-reverse：Vertical reversed axis with flex items arranged from bottom to top.</li>
+                            </ul>
+                        <li>justify-content：Sets the alignment of flex items along the main axis. (設置主軸上項目的對齊方式)</li>
+                            <ul class="Contractionfour">
+                                <li>flex-start：Flex items are packed toward the start of the main axis.</li>
+                                <li>flex-end：Flex items are packed toward the end of the main axis.</li>
+                                <li>center：Flex items are centered along the main axis.</li>
+                                <li>space-between：Flex items are evenly distributed with the first item at the start and the last item at the end of the main axis. (伸展到父元素的兩側)</li>
+                                <li>space-evenly：Flex items are evenly distributed with equal space around them. (均分子元素以外的空隙)</li>
+                            </ul>
+                        <img src="Images/Flexbox 排版技巧.png" alt="Flexbox 排版技巧">
+                        <li>align-items：設置交叉軸上單行元素的對齊方式</li>
+                            <ul class="Contractionfour">
+                                <li>stretch：這是默認值。如果 flex 項目沒有設置高度或設為 auto，將沿交叉軸方向被拉伸以佔據整個 flex 容器的高度。如果設置了固定的高度，則保持其高度不變。</li>
+                                <li>flex-start：flex 項目沿著交叉軸的起始位置對齊。在主軸為水平且交叉軸為垂直方向時，就是頂部對齊。</li>
+                                <li>flex-end：flex 項目沿著交叉軸的終止位置對齊。在主軸為水平且交叉軸為垂直方向時，就是底部對齊。</li>
+                                <li>center：flex 項目在交叉軸上居中對齊。</li>
+                                <li>baseline：根據 flex 項目中基線不同的部分對齊。適用於交叉軸為水平方向時，讓項目的基線對齊。</li>
+                            </ul>
+                        <img src="Images/Flexbox 排版技巧2.png" alt="Flexbox 排版技巧2">
+                        <li>flex-wrap：Sets whether flex items can wrap. (設置項目是否可換行)</li>
+                            <ul class="Contractionfour">
+                                <li>nowrap (default)：Flex items will not wrap (single line).</li>
+                                <li>wrap：Flex items will wrap onto multiple lines.</li>
+                                <li>wrap-reverse：Flex items will wrap onto multiple lines in reverse order.</li>
+                            </ul>
+                        <li>align-content：Sets the alignment of flex lines when there is extra space on the cross axis. (設置多行交叉軸上的對齊方式)</li>
+                            <ul class="Contractionfour">
+                                <li>stretch：Stretch flex lines to take up the remaining space.</li>
+                                <li>flex-start：Flex lines are aligned at the start of the cross axis.</li>
+                                <li>flex-end：Flex lines are aligned at the end of the cross axis.</li>
+                                <li>center：Flex lines are centered along the cross axis.</li>
+                            </ul>
+                    </ol>
+                    <p><strong>Flex Items</strong></p>
+                    <article>
+                        Flex container 的直接子元素就是 flex items。它們可以通過以下屬性進行控制:
+                    </article>
+                    <ol class="Contractiontwo">
+                        <li>order：定義項目的排列順序</li>
+                        <li>flex-grow：定義項目的放大比例</li>
+                        <li>flex-shrink：定義項目的縮小比例</li>
+                        <li>flex-basis：定義項目的初始長度</li>
+                        <li>align-self：允許單個項目有與其他項目不同的對齊方式</li>
+                        <li>object-fit(cover)：用於控制如何調整替換元素的內容大小以適應其容器。</li>
+                    </ol>
+                <h3>The overflow property</h3>
+                    <article>The overflow property in CSS is used to control what happens to content that is too big to fit in its containing box.</article>
+                    <ol>
+                        <li>visible (default)：The content is not clipped and is rendered outside the element's box. (內容不會被修剪，會全部顯示在元素框之外)</li>
+                        <li>hidden：The content is clipped, and any excess is not shown. (內容會被修剪，多餘的部分隱藏不顯示)</li>
+                        <li>scroll：Scrollbars are added to the element to show the overflowing content, regardless of whether the content is larger than the box or not. (無論內容是否超出，都會顯示滾動條，以便查看多餘的內容)</li>
+                        <li>auto：Scrollbars are added only when necessary, i.e., when the content overflows the box. (只有在內容超出元素框時才顯示滾動條)</li>
+                        <li>overlay：Similar to auto, but the scrollbars are drawn on top of the content, rather than taking up space within the element's box. (行為類似 auto，但滾動條繪製在元素內容之上，而不是佔用內容空間)</li>
+                    </ol>
+                <h3>The transform property</h3>
+                    <article>
+                        transform 是CSS中一個非常強大的屬性，它允許我們對元素進行2D或3D的幾何變換，包括旋轉(rotate)、縮放(scale)、傾斜(skew)、位移(translate)等操作。
+                        這些函數可以單獨使用，也可以通過空格組合使用實現復合變換效果。
+                        除了2D變換外，transform 還支持3D變換，例如rotateX() rotateY() translateZ()等函數。
+                        transform 屬性的強大之處在於可以實現多種幾何變換效果，並且不會影響到元素在文檔流中的位置和大小，非常適合製作動畫效果。它也可以與transition和animation配合使用，實現平滑的動態效果。
+                    </article>
+                    <ol>
+                        <li>translate(x, y):平移變換，根據給定的x和y值將元素在平面上沿着x軸和y軸方向移動指定的距離。<br>
+                            transform：translate(50px, 100px); /* 向右移動50px，向下移動100px */</li>
+                        <li>rotate(angle):旋轉變換，將元素繞自身中心點旋轉給定角度，正值為順時針方向。<br>
+                            transform：rotate(45deg); /* 順時針旋轉45度 */</li>
+                        <li>scale(x, y):縮放變換，根據給定的x和y比例值縮放元素的尺寸。<br>
+                            transform：scale(1.5, 0.8); /* 水平方向放大1.5倍，垂直方向縮小0.8倍 */</li>
+                        <li>skew(x-angle, y-angle):傾斜變換，沿X軸和Y軸方向傾斜給定的角度值。<br>
+                            transform：skew(30deg, 20deg); /* 沿X軸方向傾斜30度，沿Y軸方向傾斜20度 */</li>
+                        <li>matrix():使用矩陣直接描述變換，更加通用和強大。</li>
+                    </ol>
+                <h3>The box-sizing property</h3>
+                    <p>用於控制瀏覽器渲染元素的寬高計算方式。它有以下三個可能的值:</p>
+                    <ol>
+                        <li>content-box：這是瀏覽器默認的行為方式。元素的寬高僅包括 content 區域，border 和 padding 都不被計算在內。例如，如果一個元素設置了 width：200px; padding：20px;<br>
+                            那麼實際渲染出來的寬度將是 200px + 20px*2 = 240px。這種情況下使得手動計算元素的實際佔用空間變得很麻煩。</li>    
+                        <li>border-box：這種模式下，元素設置的 width 和 height 值已經包括了 border 和 padding，實際渲染出的寬高就等於設置的值。<br>
+                            比如設置了 width：200px; padding：20px; border：2px solid black;，渲染出來的寬度還是 200px，內容區域寬度是 200 - 202 - 22 = 156px。<br>
+                            這種模式使得設置元素尺寸變得簡單直觀。</li>
+                        <li>padding-box（實驗性，支持度較差）：一種過渡的盒模型，元素的寬高包含了 padding，但不包含 border。</li>
+                    </ol>
+                    <p>大多數開發者傾向於使用 border-box 模式，因為這樣計算元素尺寸更簡單直覺。一些流行的 CSS 框架如 Bootstrap 也設置了全局的 box-sizing：border-box。</p>
+        </section>
 
         <section class="backgroundtwo">
             <h2>偽選擇器 (pseudo-selector)</h2>
@@ -188,7 +285,7 @@
             <h2>The attribute selector</h2>
                 <article>
                     To style the submit button, you can use an attribute selector, which selects an element based on the given attribute value.<br>
-                    Here is an example: input[name="password"] {} 即為設定name名稱為password的input元素；input[type="radio"] {} 即為設定type為radio的input元素<br>
+                    Here is an example：input[name="password"] {} 即為設定name名稱為password的input元素；input[type="radio"] {} 即為設定type為radio的input元素<br>
                     The above selects input elements with a name attribute value of password.
                 </article>
         </section>
@@ -201,7 +298,7 @@
                         There are two ways to set the color value：<br>
                         1. color name.<br>
                         2. rgb(red, green, blue)：red/green/blue are 0~255 or 0~100%;<br>
-                        For example: rgb(192, 192, 192) is gray color.
+                        For example：rgb(192, 192, 192) is gray color.
                     </p>
                     <ul>
                         <li>Primary colors are colors that, when combined, create pure white.</li>
@@ -244,7 +341,7 @@
                 <h3>The HSL color model：hsl(hue, saturation, lightness)</h3>
                     <article>
                         The HSL color model, which stands for hue, saturation, and lightness, is an alternative method for representing colors. For example, hsl(hue, saturation, lightness).
-                        The CSS hsl function accepts three values: a number from 0 to 360 for hue, a percentage from 0 to 100 for saturation, and a percentage from 0 to 100 for lightness.<br>
+                        The CSS hsl function accepts three values：a number from 0 to 360 for hue, a percentage from 0 to 100 for saturation, and a percentage from 0 to 100 for lightness.<br>
                         If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue is at 240 degrees.<br>
                         Saturation is the intensity of a color ranging from 0% (gray) to 100% (pure color). You must add the percent sign (%) to the saturation and lightness values.<br>
                         Lightness is the brightness level of a color, ranging from 0% (complete black) to 100% (complete white), with 50% representing neutrality.<br>
@@ -253,14 +350,14 @@
                     <article>
                         The CSS linear-gradient function allows you to control the direction of the transition along a line and determine which colors are used.
                         One thing to remember is that the linear-gradient function actually creates an image element and is usually paired with the background property, which can accept an image as a value.<br>
-                        Basic syntax: linear-gradient(gradientDirection, color1, color2, ...);<br>
-                        For example: background: linear-gradient(90deg, rgb(255,0,0), rgb(0,255,0));<br>
+                        Basic syntax：linear-gradient(gradientDirection, color1, color2, ...);<br>
+                        For example：background：linear-gradient(90deg, rgb(255,0,0), rgb(0,255,0));<br>
                         Gradient direction refers to the direction of the line used for the transition.
                         Color1 and color2 are arguments representing the colors that will be used in the transition itself.
                         These can be any type of color, including color keywords, hex, rgb, or hsl.
                         Color stops allow you to fine-tune where colors are placed along the gradient line.
                         They are a length unit like pixels (px) or percentages (%) that follow a color in the linear-gradient function.<br>
-                        For example: background: linear-gradient(90deg, rgb(255, 0, 0) 50%, rgb(0, 255, 0), rgb(0, 0, 255));<br>
+                        For example：background：linear-gradient(90deg, rgb(255, 0, 0) 50%, rgb(0, 255, 0), rgb(0, 0, 255));<br>
                         Even if you don't set a color stop point, the linear gradient function automatically calculates these values for you and presets to place the color evenly along the gradient line.
                         If no gradient direction argument is provided to the linear-gradient function, it arranges colors from top to bottom, or along a 180-degree line, by default.
                     </article>
@@ -281,7 +378,7 @@
                         The 'rgba' function works similarly to the 'rgb' function, but it requires an additional number ranging from 0 to 1.0 for the alpha channel.<br>
                         For example, rgba(redValue, greenValue, blueValue, alphaValue);<br>
                     </article>
-                <h3>Shadow：box-shadow: offsetX offsetY color;</h3>
+                <h3>Shadow：box-shadow：offsetX offsetY blur_radius spread_radius color;</h3>
                     <article>
                         The <span class="mark">box-shadow</span> property allows you to apply one or more shadows around an element.<br>
                         Here's how the offsetX and offsetY values work:
@@ -297,12 +394,25 @@
                         You can also use an optional <span class="mark">spreadRadius</span> value to extend the reach of the shadow.
                         Notice that the edges of the shadow are sharp.
                         This is because there is an optional <span class="mark">blurRadius</span> value for the <span class="mark">box-shadow</span> property.<br>
-                        For example, box-shadow: offsetX offsetY blurRadius color;<br>
+                        For example, box-shadow：offsetX offsetY blurRadius color;<br>
                         If a blurRadius value isn't included, it defaults to 0 and produces sharp edges.
                         The higher the value of blurRadius, the greater the blurring effect will be.
                         If you want to extend the shadow further, you can achieve this by using the optional <span class="mark">spreadRadius</span> value.<br>
-                        For example, box-shadow: offsetX offsetY blurRadius spreadRadius color;<br>
+                        Use the "inset" keyword of box-shadow to create an inner shadow effect.
+                        By adjusting the blur radius and extension radius, you can blur the edges of the inner shadow, thereby achieving the effect of blurring the edges of the background.<br>
+                        For example, box-shadow：0 0 20px 20px #fff <span class="wordred">inset</span>
                     </article>
+                <h3>The filter property：用於對元素應用圖形效果，比如模糊、銳利化、變色等。它提供了一系列功能函數，可以單獨使用或組合使用。</h3>
+                    <ol>
+                        <li>filter：blur(<span class="wordred">4px</span>)：應用高斯模糊效果，值越大越模糊。</li>
+                        <li>filter：brightness(<span class="wordred">150%</span>)：調整圖像的亮度。</li>
+                        <li>filter：contrast(<span class="wordred">200%</span>)：調整圖像的對比度。</li>
+                        <li>filter：grayscale(<span class="wordred">100%</span>)：將圖像轉換為灰階。</li>
+                        <li>filter：hue-rotate(<span class="wordred">90deg</span>)：調整圖像的色相旋轉角度。</li>
+                        <li>filter：invert(<span class="wordred">100%</span>)：反轉圖像的顏色。</li>
+                        <li>filter：opacity(<span class="wordred">50%</span>)：調整圖像的不透明度。</li>
+                        <li>filter：saturate(<span class="wordred">200%</span>)：調整圖像的飽和度。</li>
+                    </ol>
         </section>
 
         <section class="backgroundtwo">
