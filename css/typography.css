@@ -34,7 +34,7 @@ img {
     max-width: 100%; /* 圖片的最大寬度設為其容器的100% */
     height: auto; /* 高度自動按比例縮放 */
     margin-bottom: 10px; /* 添加底部間距 */
-    padding: 5px; /* 添加內邊距 */
+    box-sizing: border-box;
 }
 
 .content {
@@ -134,7 +134,7 @@ input:focus {
     padding: 20px 20px 20px 50px; /* 內文縮排 */
     margin: 2px 5px;
     color: rgb(63, 86, 150);
-    box-shadow: 0 0 5px 5px #ffffff inset; /* 四邊柔和效果 */
+    box-shadow: 0 0 0.5rem 0.5rem #ffffff inset; /* 四邊柔和效果 */
 }
 
 .backgroundtwo li {
