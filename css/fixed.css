@@ -1,0 +1,21 @@
+.mark {
+    background-color: rgb(190, 190, 190);
+    border: 1px black solid;
+    padding: 1px 4px;
+}
+
+.wordred {
+    color: red;
+}
+
+.wordgreen {
+    color: green;
+}
+
+.Contractiontwo {
+    padding-left: 25px;
+}
+
+.Contractionfour {
+    padding-left: 30px;
+}
